@@ -1,0 +1,36 @@
+name: qit_flutter
+description: The test app for qit company built with salem zakkar
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.2 <3.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  fluro: ^2.0.5
+  injectable: ^2.1.1
+  get_it: ^7.2.0
+  freezed_annotation: ^2.2.0
+  dio: ^5.1.0
+  easy_localization: ^3.0.1
+  flutter_screenutil: ^5.7.0
+  salem_package:
+    git: https://github.com/SalemZakkar/SalemPackage.git
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+  build_runner: ^2.3.3
+  freezed: ^2.3.2
+  flutter_gen: ^5.2.0
+  injectable_generator:
+
+flutter:
+
+  uses-material-design: true
