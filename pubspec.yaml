@@ -14,12 +14,18 @@ dependencies:
   fluro: ^2.0.5
   injectable: ^2.1.1
   get_it: ^7.2.0
+  flutter_bloc: ^8.1.2
+  equatable: ^2.0.5
   freezed_annotation: ^2.2.0
+  dartz: ^0.10.1
   dio: ^5.1.0
+  quickalert: ^1.0.1
   easy_localization: ^3.0.1
   flutter_screenutil: ^5.7.0
   salem_package:
     git: https://github.com/SalemZakkar/SalemPackage.git
+  json_annotation: ^4.8.0
+
 
 dev_dependencies:
   flutter_test:
@@ -28,9 +34,17 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   build_runner: ^2.3.3
   freezed: ^2.3.2
-  flutter_gen: ^5.2.0
+  flutter_gen_runner:
   injectable_generator:
+  json_serializable: ^6.6.1
 
 flutter:
 
   uses-material-design: true
+  assets:
+    - assets/images/
+
+flutter_gen:
+  output: lib/presentation/core/sources/
+
+
