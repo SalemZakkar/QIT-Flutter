@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qit_flutter/injection.dart';
-import 'package:qit_flutter/presentation/auth/signup/bloc/sign_up_bloc/sign_up_bloc.dart';
 import 'package:qit_flutter/presentation/core/extension/screen_util_extension.dart';
+import 'package:qit_flutter/presentation/core/routes.dart';
 import 'package:qit_flutter/presentation/core/sources/assets.gen.dart';
 import 'package:qit_flutter/presentation/core/utils/validator.dart';
+import 'package:qit_flutter/presentation/home/pages/home_page.dart';
 import 'package:salem_package/enums/failure_type.dart';
 import 'package:salem_package/salem_package.dart';
 import 'package:salem_package/salem_package.dart' as sz;
+
+import '../../../blocs/sign_up_bloc/sign_up_bloc.dart';
 
 class SignUpPage extends StatefulWidget {
   static const String routeName = "/signUp";
@@ -47,10 +50,7 @@ class _SignUpPageState extends State<SignUpPage> with sz.ScreenUtil {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 60,
-        leading: BackButton(
-          onPressed: () {},
-        ),
+        toolbarHeight: 60.h,
       ),
       body: Container(
         padding: const EdgeInsets.only(right: 20, left: 20),
@@ -130,6 +130,8 @@ class _SignUpPageState extends State<SignUpPage> with sz.ScreenUtil {
                     }
                     if (state.success) {
                       stopLoading(context);
+                      context.router.navigateTo(context, HomePage.routeName,
+                          clearStack: true);
                     }
                     if (state.fail) {
                       stopLoading(context);
@@ -142,13 +144,13 @@ class _SignUpPageState extends State<SignUpPage> with sz.ScreenUtil {
                       height: 45.h,
                       width: 1000.w,
                       onPressed: () {
-                        //   if (key.currentState!.validate()) {
-                        signUpBloc.add(SignUp(
-                            email: email.text,
-                            name: name.text,
-                            password: password.text,
-                            confirmPassword: confirmPassword.text));
-                        //   }
+                        if (key.currentState!.validate()) {
+                          signUpBloc.add(SignUp(
+                              email: email.text,
+                              name: name.text,
+                              password: password.text,
+                              confirmPassword: confirmPassword.text));
+                        }
                       },
                       child: Text(
                         "Sign Up",

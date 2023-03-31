@@ -20,6 +20,7 @@ dependencies:
   dartz: ^0.10.1
   dio: ^5.1.0
   quickalert: ^1.0.1
+  shared_preferences: ^2.0.20
   easy_localization: ^3.0.1
   flutter_screenutil: ^5.7.0
   salem_package:

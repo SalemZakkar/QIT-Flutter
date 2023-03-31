@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:qit_flutter/domain/auth/entites/user_data/user_data_entity/user.dart';
+
+import '../../../../domain/auth/entites/user_data_entity/user.dart';
 
 part 'user_model.freezed.dart';
 part 'user_model.g.dart';

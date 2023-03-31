@@ -20,6 +20,8 @@ class BaseRepository {
         return left(const Failure(type: FailureType.unAuthorized));
       } else if (e.response?.statusCode == 404) {
         return left(const Failure(type: FailureType.notFound));
+      } else if (e.response?.statusCode == 401) {
+        return left(const Failure(type: FailureType.unAuth));
       } else if (e.response?.statusCode == 400 ||
           e.response?.statusCode == 422) {
         return left(const Failure(type: FailureType.invalidArguments));

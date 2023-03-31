@@ -17,7 +17,6 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$UserData {
   String get token => throw _privateConstructorUsedError;
-
   User get user => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -29,7 +28,6 @@ mixin _$UserData {
 abstract class $UserDataCopyWith<$Res> {
   factory $UserDataCopyWith(UserData value, $Res Function(UserData) then) =
       _$UserDataCopyWithImpl<$Res, UserData>;
-
   @useResult
   $Res call({String token, User user});
 
@@ -43,7 +41,6 @@ class _$UserDataCopyWithImpl<$Res, $Val extends UserData>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -79,7 +76,6 @@ abstract class _$$_UserDataCopyWith<$Res> implements $UserDataCopyWith<$Res> {
   factory _$$_UserDataCopyWith(
           _$_UserData value, $Res Function(_$_UserData) then) =
       __$$_UserDataCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String token, User user});
@@ -155,10 +151,8 @@ abstract class _UserData implements UserData {
 
   @override
   String get token;
-
   @override
   User get user;
-
   @override
   @JsonKey(ignore: true)
   _$$_UserDataCopyWith<_$_UserData> get copyWith =>
