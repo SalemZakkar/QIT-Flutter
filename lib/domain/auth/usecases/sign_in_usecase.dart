@@ -8,9 +8,10 @@ import '../entites/user_data_entity/user_data.dart';
 @lazySingleton
 class SignInUseCase {
   AuthRepository repository;
+
   SignInUseCase(this.repository);
+
   Future<Either<Failure, UserData>> call(String email, String password) async {
     return await repository.signIn(email, password);
   }
 }
-

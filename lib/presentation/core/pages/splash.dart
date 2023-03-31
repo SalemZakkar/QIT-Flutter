@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:qit_flutter/injection.dart';
 import 'package:qit_flutter/presentation/core/blocs/auth_bloc/auth_bloc.dart';
 import 'package:qit_flutter/presentation/core/routes.dart';
 import 'package:qit_flutter/presentation/core/sources/assets.gen.dart';
@@ -9,7 +9,7 @@ import 'package:qit_flutter/presentation/home/pages/home_page.dart';
 import 'package:salem_package/enums/failure_type.dart';
 import 'package:salem_package/salem_package.dart';
 
-import '../../auth/sign_in/page/sign_in_page.dart';
+import '../../auth/pages/sign_in_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -22,6 +22,7 @@ class _SplashPageState extends State<SplashPage> {
   bool error = false;
   bool auth = false;
   bool loading = false;
+
   @override
   void initState() {
     context.read<AuthBloc>().add(const AuthFromDevice());
@@ -43,11 +44,13 @@ class _SplashPageState extends State<SplashPage> {
             children: [
               Image.asset(Assets.images.logo.path),
               20.spaceHeight(),
-              BlocConsumer<AuthBloc , AuthState>(
-                builder: (context , state){
-                  if(state is AuthLoading){
+              BlocConsumer<AuthBloc, AuthState>(
+                builder: (context, state) {
+                  if (state is AuthLoading) {
                     return const CircularProgressIndicator();
-                  }else if(state is UnAuthState || (state is AuthFail && state.failure.type != FailureType.networkError)){
+                  } else if (state is UnAuthState ||
+                      (state is AuthFail &&
+                          state.failure.type != FailureType.networkError)) {
                     return Column(
                       children: [
                         GestureDetector(
@@ -64,16 +67,17 @@ class _SplashPageState extends State<SplashPage> {
                             ),
                             alignment: Alignment.center,
                             child: Text(
-                              "Sign in",
-                              style:
-                              TextStyle(fontSize: 15.sp, color: Colors.white),
+                              "sign_in".tr(),
+                              style: TextStyle(
+                                  fontSize: 15.sp, color: Colors.white),
                             ),
                           ),
                         ),
                         20.h.spaceHeight(),
                         GestureDetector(
                           onTap: () {
-                            context.router.navigateTo(context, HomePage.routeName,
+                            context.router.navigateTo(
+                                context, HomePage.routeName,
                                 clearStack: true);
                           },
                           child: Container(
@@ -88,25 +92,28 @@ class _SplashPageState extends State<SplashPage> {
                             ),
                             alignment: Alignment.center,
                             child: Text(
-                              "Skip",
-                              style:
-                              TextStyle(fontSize: 15.sp, color: Colors.white),
+                              "skip".tr(),
+                              style: TextStyle(
+                                  fontSize: 15.sp, color: Colors.white),
                             ),
                           ),
                         ),
+                        20.h.spaceHeight(),
                       ],
                     );
-                  }else if(state is AuthFail && state.failure.type == FailureType.networkError){
+                  } else if (state is AuthFail &&
+                      state.failure.type == FailureType.networkError) {
                     return errorWidget(() {
                       //context.read<AuthBloc>().add(const AuthReset());
                       context.read<AuthBloc>().add(const AuthFromDevice());
-                    } , context);
+                    }, context);
                   }
                   return const SizedBox();
                 },
-                listener: (context , state){
-                  if(state is Authenticated){
-                    context.router.navigateTo(context, HomePage.routeName , clearStack: true);
+                listener: (context, state) {
+                  if (state is Authenticated) {
+                    context.router.navigateTo(context, HomePage.routeName,
+                        clearStack: true);
                   }
                 },
               ),
@@ -121,7 +128,7 @@ class _SplashPageState extends State<SplashPage> {
 Widget errorWidget(Function call, context) {
   return Column(
     children: [
-      Text("No Network !",
+      Text("no_network".tr(),
           style: TextStyle(
               color: Theme.of(context).colorScheme.error, fontSize: 17.sp)),
       20.h.spaceHeight(),
@@ -137,7 +144,7 @@ Widget errorWidget(Function call, context) {
               borderRadius: BorderRadius.circular(22)),
           alignment: Alignment.center,
           child: Text(
-            "Retry",
+            "retry".tr(),
             style: TextStyle(color: Colors.white, fontSize: 14.sp),
           ),
         ),

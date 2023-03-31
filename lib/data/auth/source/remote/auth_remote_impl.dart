@@ -16,6 +16,7 @@ import '../local/local_data_source.dart';
 class AuthRemoteImpl extends AuthRemote with BaseRepository {
   final Dio dio;
   final LocalDataSource localDataSource;
+
   AuthRemoteImpl(this.dio, this.localDataSource);
 
   @override

@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as m;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qit_flutter/injection.dart';
@@ -11,7 +13,7 @@ import 'package:salem_package/enums/failure_type.dart';
 import 'package:salem_package/salem_package.dart';
 import 'package:salem_package/salem_package.dart' as sz;
 
-import '../../../blocs/sign_up_bloc/sign_up_bloc.dart';
+import '../blocs/sign_up_bloc/sign_up_bloc.dart';
 
 class SignUpPage extends StatefulWidget {
   static const String routeName = "/signUp";
@@ -33,16 +35,16 @@ class _SignUpPageState extends State<SignUpPage> with sz.ScreenUtil {
   @override
   void initState() {
     errorMessages = {
-      FailureType.serverError: "Server Error",
-      FailureType.invalidArguments: "account exists",
-      FailureType.networkError: "no network",
+      FailureType.serverError: "server_error".tr(),
+      FailureType.invalidArguments: "user_exists".tr(),
+      FailureType.networkError: "no_network".tr(),
     };
     super.initState();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
+    signUpBloc.close();
     super.dispose();
   }
 
@@ -69,10 +71,11 @@ class _SignUpPageState extends State<SignUpPage> with sz.ScreenUtil {
                 ),
                 TextFormField(
                   controller: email,
-                  decoration: const InputDecoration(hintText: 'Email'),
+                  textDirection: m.TextDirection.ltr,
+                  decoration: InputDecoration(hintText: 'email'.tr()),
                   validator: (data) {
                     if (data?.isEmpty == true || !Validator.checkEmail(data!)) {
-                      return "Email invalid";
+                      return "email_invalid".tr();
                     }
                     return null;
                   },
@@ -80,10 +83,11 @@ class _SignUpPageState extends State<SignUpPage> with sz.ScreenUtil {
                 20.spaceHeight(),
                 TextFormField(
                   controller: name,
-                  decoration: const InputDecoration(hintText: 'Username'),
+                  textDirection: m.TextDirection.ltr,
+                  decoration: InputDecoration(hintText: 'name'.tr()),
                   validator: (data) {
                     if (data?.isEmpty == true || !Validator.checkName(data!)) {
-                      return "name invalid";
+                      return "name_invalid".tr();
                     }
                     return null;
                   },
@@ -91,32 +95,34 @@ class _SignUpPageState extends State<SignUpPage> with sz.ScreenUtil {
                 20.spaceHeight(),
                 TextFormField(
                   controller: password,
+                  textDirection: m.TextDirection.ltr,
                   obscureText: true,
-                  decoration: const InputDecoration(hintText: 'Password'),
+                  decoration: InputDecoration(hintText: 'password'.tr()),
                   validator: (data) {
                     if (password.text != confirmPassword.text) {
-                      return "Passwords is different";
+                      return "password_mismatch".tr();
                     }
                     if (data?.isEmpty == true ||
                         !Validator.checkPassword(data!)) {
-                      return "Password invalid";
+                      return "password_invalid".tr();
                     }
                     return null;
                   },
                 ),
                 20.spaceHeight(),
                 TextFormField(
+                  textDirection: m.TextDirection.ltr,
                   controller: confirmPassword,
                   obscureText: true,
                   decoration:
-                      const InputDecoration(hintText: 'Confirm password'),
+                      InputDecoration(hintText: 'confirm_password'.tr()),
                   validator: (data) {
                     if (password.text != confirmPassword.text) {
-                      return "Passwords is different";
+                      return "password_mismatch".tr();
                     }
                     if (data?.isEmpty == true ||
                         !Validator.checkPassword(data!)) {
-                      return "Password invalid";
+                      return "password_invalid".tr();
                     }
                     return null;
                   },
@@ -153,7 +159,7 @@ class _SignUpPageState extends State<SignUpPage> with sz.ScreenUtil {
                         }
                       },
                       child: Text(
-                        "Sign Up",
+                        "sign_up".tr(),
                         style: TextStyle(fontSize: 15.sp),
                       )),
                 ),

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:salem_package/enums/failure_type.dart';
@@ -16,7 +17,9 @@ extension Dialogs on ScreenUtil {
     QuickAlert.show(
         context: context,
         type: QuickAlertType.error,
-        text: errorMessages[type] ?? "Error",
+        title: "error".tr(),
+        confirmBtnText: "ok".tr(),
+        text: errorMessages[type] ?? "unknown_error".tr(),
         confirmBtnColor: Theme.of(context).colorScheme.error);
   }
 }

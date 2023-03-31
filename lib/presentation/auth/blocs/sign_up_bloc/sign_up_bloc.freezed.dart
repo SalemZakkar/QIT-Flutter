@@ -24,6 +24,7 @@ mixin _$SignUpEvent {
         signUp,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
@@ -41,12 +42,14 @@ mixin _$SignUpEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(SignUp value) signUp,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
@@ -76,6 +79,7 @@ class _$SignUpEventCopyWithImpl<$Res, $Val extends SignUpEvent>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 }
@@ -191,6 +195,7 @@ abstract class _Started implements SignUpEvent {
 abstract class _$$SignUpCopyWith<$Res> {
   factory _$$SignUpCopyWith(_$SignUp value, $Res Function(_$SignUp) then) =
       __$$SignUpCopyWithImpl<$Res>;
+
   @useResult
   $Res call(
       {String email, String name, String password, String confirmPassword});
@@ -355,9 +360,13 @@ abstract class SignUp implements SignUpEvent {
       required final String confirmPassword}) = _$SignUp;
 
   String get email;
+
   String get name;
+
   String get password;
+
   String get confirmPassword;
+
   @JsonKey(ignore: true)
   _$$SignUpCopyWith<_$SignUp> get copyWith =>
       throw _privateConstructorUsedError;

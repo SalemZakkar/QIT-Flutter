@@ -1,8 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qit_flutter/injection.dart';
-import 'package:qit_flutter/presentation/auth/sign_in/page/sign_in_page.dart';
+import 'package:qit_flutter/presentation/auth/pages/sign_in_page.dart';
 import 'package:qit_flutter/presentation/core/blocs/auth_bloc/auth_bloc.dart';
 import 'package:qit_flutter/presentation/core/extension/screen_util_extension.dart';
 import 'package:qit_flutter/presentation/core/routes.dart';
@@ -15,6 +16,7 @@ import 'package:salem_package/salem_package.dart' as sz;
 
 class SettingsPage extends StatefulWidget {
   static const String routeName = "/settings";
+
   const SettingsPage({Key? key}) : super(key: key);
 
   @override
@@ -24,20 +26,22 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> with sz.ScreenUtil {
   bool auth = getIt<AuthBloc>().state is Authenticated;
   var bloc = getIt<SignOutBloc>();
+
   @override
   void initState() {
     errorMessages = {
-      FailureType.networkError: "no network",
-      FailureType.serverError: "Server Error"
+      FailureType.networkError: "no_network".tr(),
+      FailureType.serverError: "server_error".tr()
     };
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    bool en = context.locale == const Locale("en");
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Settings"),
+          title: Text("settings".tr()),
         ),
         body: MultiBlocListener(
           listeners: [
@@ -89,7 +93,7 @@ class _SettingsPageState extends State<SettingsPage> with sz.ScreenUtil {
                             ),
                             alignment: Alignment.center,
                             child: Text(
-                              "Sign in",
+                              "sign_in".tr(),
                               style: TextStyle(
                                   fontSize: 15.sp, color: Colors.white),
                             ),
@@ -101,15 +105,29 @@ class _SettingsPageState extends State<SettingsPage> with sz.ScreenUtil {
                       Icons.language,
                       color: Theme.of(context).primaryColor,
                     ),
-                    title: const Text("Language"),
+                    title: Text("language".tr()),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       60.w.spaceWidth(),
-                      const SelectableButton(text: "English", selected: true),
+                      GestureDetector(
+                          onTap: () {
+                            if (!en) {
+                              context.setLocale(const Locale("en"));
+                            }
+                          },
+                          child: SelectableButton(
+                              text: "english".tr(), selected: en)),
                       20.w.spaceWidth(),
-                      const SelectableButton(text: "Arabic", selected: false),
+                      GestureDetector(
+                          onTap: () {
+                            if (en) {
+                              context.setLocale(const Locale("ar"));
+                            }
+                          },
+                          child: SelectableButton(
+                              text: "arabic".tr(), selected: !en)),
                     ],
                   ),
                   100.h.spaceHeight(),
@@ -128,7 +146,7 @@ class _SettingsPageState extends State<SettingsPage> with sz.ScreenUtil {
                         ),
                         alignment: Alignment.center,
                         child: Text(
-                          "Sign Out",
+                          "sign_out".tr(),
                           style:
                               TextStyle(fontSize: 15.sp, color: Colors.white),
                         ),

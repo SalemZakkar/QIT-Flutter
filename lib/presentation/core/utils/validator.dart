@@ -22,9 +22,13 @@ class Validator {
   }
 
   static bool checkPassword(String password) {
-    return RegExp(r'^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*-~]).{8,}$')
-            .hasMatch(password) &&
-        !password.contains(" ");
+    // return RegExp(r'^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*-~]).{8,}$')
+    //         .hasMatch(password) &&
+    //     !password.contains(" ");
+    return password.isNotEmpty &&
+        !password.contains(" ") &&
+        password.length >= 8 &&
+        password.length <= 24;
   }
 
   static bool checkPhoneNumber(String phone) {

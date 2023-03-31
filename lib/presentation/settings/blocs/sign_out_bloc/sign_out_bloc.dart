@@ -8,12 +8,14 @@ import 'package:salem_package/models/failure.dart';
 import '../../../../domain/auth/usecases/sign_out_use_case.dart';
 import '../../../core/blocs/auth_bloc/auth_bloc.dart';
 
-part 'sign_out_event.dart';
 part 'sign_out_bloc.freezed.dart';
+part 'sign_out_event.dart';
+
 @injectable
 class SignOutBloc extends Bloc<SignOutEvent, BaseState> {
   SignOutUseCase signOutUseCase;
   AuthBloc authBloc;
+
   SignOutBloc(this.signOutUseCase, this.authBloc) : super(const BaseState()) {
     on<SignOutEvent>((event, emit) {
       // TODO: implement event handler

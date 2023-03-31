@@ -5,6 +5,7 @@ import 'package:qit_flutter/presentation/settings/pages/settings_page.dart';
 
 class HomePage extends StatefulWidget {
   static const routeName = "/home";
+
   const HomePage({Key? key}) : super(key: key);
 
   @override
@@ -17,11 +18,16 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(onPressed: (){
-            context.router.navigateTo(context, SettingsPage.routeName);
-          }, icon: const Icon(Icons.settings))
+          IconButton(
+              onPressed: () {
+                context.router.navigateTo(context, SettingsPage.routeName);
+              },
+              icon: const Icon(Icons.settings))
         ],
-        title: Text("Our Products" , style: TextStyle(fontSize: 20.sp),),
+        title: Text(
+          "Our Products",
+          style: TextStyle(fontSize: 20.sp),
+        ),
       ),
     );
   }

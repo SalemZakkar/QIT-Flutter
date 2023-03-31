@@ -8,6 +8,7 @@ import '../entites/user_data_entity/user_data.dart';
 @lazySingleton
 class SignUpUseCase {
   AuthRepository repository;
+
   SignUpUseCase(this.repository);
 
   Future<Either<Failure, UserData>> call(

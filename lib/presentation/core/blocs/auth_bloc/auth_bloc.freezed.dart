@@ -25,6 +25,7 @@ mixin _$AuthEvent {
     required TResult Function(UserData userData) setAuthenticated,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
@@ -44,6 +45,7 @@ mixin _$AuthEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
@@ -53,6 +55,7 @@ mixin _$AuthEvent {
     required TResult Function(SetAuthenticated value) setAuthenticated,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
@@ -87,6 +90,7 @@ class _$AuthEventCopyWithImpl<$Res, $Val extends AuthEvent>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 }
@@ -575,6 +579,7 @@ abstract class _$$SetAuthenticatedCopyWith<$Res> {
   factory _$$SetAuthenticatedCopyWith(
           _$SetAuthenticated value, $Res Function(_$SetAuthenticated) then) =
       __$$SetAuthenticatedCopyWithImpl<$Res>;
+
   @useResult
   $Res call({UserData userData});
 
@@ -728,6 +733,7 @@ abstract class SetAuthenticated implements AuthEvent {
       _$SetAuthenticated;
 
   UserData get userData;
+
   @JsonKey(ignore: true)
   _$$SetAuthenticatedCopyWith<_$SetAuthenticated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -744,6 +750,7 @@ mixin _$AuthState {
     required TResult Function(Failure failure) authFail,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -763,6 +770,7 @@ mixin _$AuthState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -772,6 +780,7 @@ mixin _$AuthState {
     required TResult Function(AuthFail value) authFail,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
@@ -806,6 +815,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 }
@@ -1174,6 +1184,7 @@ abstract class _$$AuthenticatedCopyWith<$Res> {
   factory _$$AuthenticatedCopyWith(
           _$Authenticated value, $Res Function(_$Authenticated) then) =
       __$$AuthenticatedCopyWithImpl<$Res>;
+
   @useResult
   $Res call({UserData data});
 
@@ -1325,6 +1336,7 @@ abstract class Authenticated implements AuthState {
   const factory Authenticated({required final UserData data}) = _$Authenticated;
 
   UserData get data;
+
   @JsonKey(ignore: true)
   _$$AuthenticatedCopyWith<_$Authenticated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1335,6 +1347,7 @@ abstract class _$$AuthFailCopyWith<$Res> {
   factory _$$AuthFailCopyWith(
           _$AuthFail value, $Res Function(_$AuthFail) then) =
       __$$AuthFailCopyWithImpl<$Res>;
+
   @useResult
   $Res call({Failure failure});
 }
@@ -1475,6 +1488,7 @@ abstract class AuthFail implements AuthState {
   const factory AuthFail({required final Failure failure}) = _$AuthFail;
 
   Failure get failure;
+
   @JsonKey(ignore: true)
   _$$AuthFailCopyWith<_$AuthFail> get copyWith =>
       throw _privateConstructorUsedError;

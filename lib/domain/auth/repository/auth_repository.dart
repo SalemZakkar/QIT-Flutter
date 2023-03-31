@@ -5,7 +5,10 @@ import 'package:salem_package/models/failure.dart';
 abstract class AuthRepository {
   Future<Either<Failure, UserData>> signUp(
       String email, String password, String confirm, String name);
-  Future<Either<Failure , UserData>> signIn(String email , String password);
-  Future<Either<Failure , UserData>> signInFromDevice();
-  Future<Either<Failure , Unit>> signInOut();
+
+  Future<Either<Failure, UserData>> signIn(String email, String password);
+
+  Future<Either<Failure, UserData>> signInFromDevice();
+
+  Future<Either<Failure, Unit>> signInOut();
 }

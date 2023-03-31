@@ -1,22 +1,23 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as m;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qit_flutter/presentation/auth/blocs/sign_in_bloc/sign_in_bloc.dart';
-import 'package:qit_flutter/presentation/auth/signup/pages/signup_page/signup_page.dart';
+import 'package:qit_flutter/presentation/auth/pages/signup_page.dart';
 import 'package:qit_flutter/presentation/core/extension/screen_util_extension.dart';
 import 'package:qit_flutter/presentation/core/routes.dart';
 import 'package:qit_flutter/presentation/core/sources/assets.gen.dart';
 import 'package:qit_flutter/presentation/home/pages/home_page.dart';
 import 'package:salem_package/enums/failure_type.dart';
 import 'package:salem_package/salem_package.dart' as sz;
-import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../../data/auth/source/local/local_data_source.dart';
-import '../../../../injection.dart';
-import '../../../core/utils/validator.dart';
+import '../../../injection.dart';
+import '../../core/utils/validator.dart';
 
 class SignInPage extends StatefulWidget {
   static const String routeName = "/signIn";
+
   const SignInPage({Key? key}) : super(key: key);
 
   @override
@@ -29,12 +30,13 @@ class _SignInPageState extends State<SignInPage> with sz.ScreenUtil {
   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
   var bloc = getIt<SignInBloc>();
   bool buttonLoading = false;
+
   @override
   void initState() {
     errorMessages = {
-      FailureType.networkError: "No Network",
-      FailureType.invalidArguments: "error email or password",
-      FailureType.serverError: "server error",
+      FailureType.networkError: "no_network".tr(),
+      FailureType.invalidArguments: "invalid_auth".tr(),
+      FailureType.serverError: "server_error".tr(),
     };
     super.initState();
   }
@@ -56,7 +58,8 @@ class _SignInPageState extends State<SignInPage> with sz.ScreenUtil {
               });
             }
             if (state.success) {
-              context.router.navigateTo(context, HomePage.routeName , clearStack: true);
+              context.router
+                  .navigateTo(context, HomePage.routeName, clearStack: true);
             }
             if (state.fail) {
               showErrorDialog(context, state.failure!.type);
@@ -77,11 +80,12 @@ class _SignInPageState extends State<SignInPage> with sz.ScreenUtil {
                     80.h.spaceHeight(),
                     TextFormField(
                       controller: email,
-                      decoration: const InputDecoration(hintText: "Email"),
+                      decoration: InputDecoration(hintText: "email".tr()),
+                      textDirection: m.TextDirection.ltr,
                       validator: (data) {
                         if (data?.isEmpty == true ||
                             !Validator.checkEmail(data!)) {
-                          return "Email invalid";
+                          return "email_invalid".tr();
                         }
                         return null;
                       },
@@ -89,11 +93,13 @@ class _SignInPageState extends State<SignInPage> with sz.ScreenUtil {
                     20.h.spaceHeight(),
                     TextFormField(
                       controller: password,
-                      decoration: const InputDecoration(hintText: "password"),
+                      decoration: InputDecoration(hintText: "password".tr()),
                       obscureText: true,
+                      textDirection: m.TextDirection.ltr,
                       validator: (data) {
-                        if (data?.isEmpty == true) {
-                          return "Password invalid";
+                        if (data?.isEmpty == true &&
+                            !Validator.checkPassword(data!)) {
+                          return "password_invalid".tr();
                         }
                         return null;
                       },
@@ -111,7 +117,7 @@ class _SignInPageState extends State<SignInPage> with sz.ScreenUtil {
                                 email: email.text, password: password.text));
                           }
                         },
-                        child: const Text("Sign In")),
+                        child: Text("sign_in".tr())),
                     15.h.spaceHeight(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -122,8 +128,8 @@ class _SignInPageState extends State<SignInPage> with sz.ScreenUtil {
                               Navigator.pushNamed(
                                   context, SignUpPage.routeName);
                             },
-                            child: const Text(
-                              "Don't have account ?",
+                            child: Text(
+                              "dont_have_account".tr(),
                             ))
                       ],
                     )

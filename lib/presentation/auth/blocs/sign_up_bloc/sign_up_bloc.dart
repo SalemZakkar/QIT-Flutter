@@ -16,6 +16,7 @@ part 'sign_up_event.dart';
 class SignUpBloc extends Bloc<SignUpEvent, BaseState> {
   SignUpUseCase useCase;
   AuthBloc authBloc;
+
   SignUpBloc(this.authBloc, this.useCase) : super(const BaseState()) {
     on<SignUpEvent>((event, emit) {});
     on<SignUp>((event, emit) async {

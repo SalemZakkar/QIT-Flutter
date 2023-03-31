@@ -2,11 +2,11 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
 import 'package:qit_flutter/injection.dart';
-import 'package:qit_flutter/presentation/auth/sign_in/page/sign_in_page.dart';
+import 'package:qit_flutter/presentation/auth/pages/sign_in_page.dart';
 import 'package:qit_flutter/presentation/home/pages/home_page.dart';
 import 'package:qit_flutter/presentation/settings/pages/settings_page.dart';
 
-import '../auth/signup/pages/signup_page/signup_page.dart';
+import '../auth/pages/signup_page.dart';
 
 class AppRouter {
   static Handler signUpHandler =
@@ -17,6 +17,7 @@ class AppRouter {
       Handler(handlerFunc: (context, params) => const SignInPage());
   static Handler homeHandler =
       Handler(handlerFunc: (context, params) => const HomePage());
+
   static void configureRoutes(FluroRouter router) {
     router.define(SignUpPage.routeName, handler: signUpHandler);
     router.define(SignInPage.routeName, handler: signInHandler);

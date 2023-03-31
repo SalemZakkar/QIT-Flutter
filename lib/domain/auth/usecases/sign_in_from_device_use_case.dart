@@ -7,7 +7,9 @@ import 'package:salem_package/models/failure.dart';
 @lazySingleton
 class SignInFromDeviceUseCase {
   AuthRepository repository;
+
   SignInFromDeviceUseCase(this.repository);
+
   Future<Either<Failure, UserData>> call() async {
     return await repository.signInFromDevice();
   }
