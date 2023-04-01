@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:qit_flutter/domain/auth/entites/user_data_entity/user.dart';
 
-part 'user_data.freezed.dart';
+part 'freezed/user_data.freezed.dart';
 
 @freezed
 class UserData with _$UserData {

@@ -1,0 +1,9 @@
+part of 'get_products_bloc.dart';
+
+@freezed
+class GetProductsEvent with _$GetProductsEvent {
+  const factory GetProductsEvent.started() = _Started;
+
+  const factory GetProductsEvent.getProducts({required int n, required int p}) =
+      GetProductsListEvent;
+}

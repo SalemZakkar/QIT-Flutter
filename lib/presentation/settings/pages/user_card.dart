@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qit_flutter/presentation/core/sources/assets.gen.dart';
-import 'package:salem_package/salem_package.dart';
 
 import '../../core/blocs/auth_bloc/auth_bloc.dart';
 
@@ -20,7 +19,7 @@ class _UserCardState extends State<UserCard> {
     return BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
       return Container(
         width: 1000.w,
-        height: 280.h,
+        height: 290.h,
         padding: EdgeInsets.all(10.w),
         decoration: BoxDecoration(
             color: Theme.of(context).cardColor,
@@ -35,7 +34,6 @@ class _UserCardState extends State<UserCard> {
                 fit: BoxFit.fill,
               ),
             ),
-            20.h.spaceHeight(),
             ListTile(
               leading: Icon(
                 Icons.email,

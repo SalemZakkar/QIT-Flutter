@@ -12,4 +12,7 @@ class AuthState with _$AuthState {
       Authenticated;
 
   const factory AuthState.authFail({required Failure failure}) = AuthFail;
+
+  const factory AuthState.firstTimeState({required bool firstTime}) =
+      FirstTimeState;
 }

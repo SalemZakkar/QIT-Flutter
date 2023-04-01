@@ -11,4 +11,6 @@ abstract class AuthRepository {
   Future<Either<Failure, UserData>> signInFromDevice();
 
   Future<Either<Failure, Unit>> signInOut();
+
+  bool firstTime();
 }

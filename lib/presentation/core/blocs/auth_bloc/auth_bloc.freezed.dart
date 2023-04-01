@@ -23,6 +23,7 @@ mixin _$AuthEvent {
     required TResult Function() unAuthEvent,
     required TResult Function() reset,
     required TResult Function(UserData userData) setAuthenticated,
+    required TResult Function() checkFirstTime,
   }) =>
       throw _privateConstructorUsedError;
 
@@ -33,6 +34,7 @@ mixin _$AuthEvent {
     TResult? Function()? unAuthEvent,
     TResult? Function()? reset,
     TResult? Function(UserData userData)? setAuthenticated,
+    TResult? Function()? checkFirstTime,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +44,7 @@ mixin _$AuthEvent {
     TResult Function()? unAuthEvent,
     TResult Function()? reset,
     TResult Function(UserData userData)? setAuthenticated,
+    TResult Function()? checkFirstTime,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -53,6 +56,7 @@ mixin _$AuthEvent {
     required TResult Function(UnAuthEvent value) unAuthEvent,
     required TResult Function(AuthReset value) reset,
     required TResult Function(SetAuthenticated value) setAuthenticated,
+    required TResult Function(CheckFirstTime value) checkFirstTime,
   }) =>
       throw _privateConstructorUsedError;
 
@@ -63,6 +67,7 @@ mixin _$AuthEvent {
     TResult? Function(UnAuthEvent value)? unAuthEvent,
     TResult? Function(AuthReset value)? reset,
     TResult? Function(SetAuthenticated value)? setAuthenticated,
+    TResult? Function(CheckFirstTime value)? checkFirstTime,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +77,7 @@ mixin _$AuthEvent {
     TResult Function(UnAuthEvent value)? unAuthEvent,
     TResult Function(AuthReset value)? reset,
     TResult Function(SetAuthenticated value)? setAuthenticated,
+    TResult Function(CheckFirstTime value)? checkFirstTime,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -137,6 +143,7 @@ class _$_Started implements _Started {
     required TResult Function() unAuthEvent,
     required TResult Function() reset,
     required TResult Function(UserData userData) setAuthenticated,
+    required TResult Function() checkFirstTime,
   }) {
     return started();
   }
@@ -149,6 +156,7 @@ class _$_Started implements _Started {
     TResult? Function()? unAuthEvent,
     TResult? Function()? reset,
     TResult? Function(UserData userData)? setAuthenticated,
+    TResult? Function()? checkFirstTime,
   }) {
     return started?.call();
   }
@@ -161,6 +169,7 @@ class _$_Started implements _Started {
     TResult Function()? unAuthEvent,
     TResult Function()? reset,
     TResult Function(UserData userData)? setAuthenticated,
+    TResult Function()? checkFirstTime,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -177,6 +186,7 @@ class _$_Started implements _Started {
     required TResult Function(UnAuthEvent value) unAuthEvent,
     required TResult Function(AuthReset value) reset,
     required TResult Function(SetAuthenticated value) setAuthenticated,
+    required TResult Function(CheckFirstTime value) checkFirstTime,
   }) {
     return started(this);
   }
@@ -189,6 +199,7 @@ class _$_Started implements _Started {
     TResult? Function(UnAuthEvent value)? unAuthEvent,
     TResult? Function(AuthReset value)? reset,
     TResult? Function(SetAuthenticated value)? setAuthenticated,
+    TResult? Function(CheckFirstTime value)? checkFirstTime,
   }) {
     return started?.call(this);
   }
@@ -201,6 +212,7 @@ class _$_Started implements _Started {
     TResult Function(UnAuthEvent value)? unAuthEvent,
     TResult Function(AuthReset value)? reset,
     TResult Function(SetAuthenticated value)? setAuthenticated,
+    TResult Function(CheckFirstTime value)? checkFirstTime,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -257,6 +269,7 @@ class _$AuthFromDevice implements AuthFromDevice {
     required TResult Function() unAuthEvent,
     required TResult Function() reset,
     required TResult Function(UserData userData) setAuthenticated,
+    required TResult Function() checkFirstTime,
   }) {
     return authFromDevice();
   }
@@ -269,6 +282,7 @@ class _$AuthFromDevice implements AuthFromDevice {
     TResult? Function()? unAuthEvent,
     TResult? Function()? reset,
     TResult? Function(UserData userData)? setAuthenticated,
+    TResult? Function()? checkFirstTime,
   }) {
     return authFromDevice?.call();
   }
@@ -281,6 +295,7 @@ class _$AuthFromDevice implements AuthFromDevice {
     TResult Function()? unAuthEvent,
     TResult Function()? reset,
     TResult Function(UserData userData)? setAuthenticated,
+    TResult Function()? checkFirstTime,
     required TResult orElse(),
   }) {
     if (authFromDevice != null) {
@@ -297,6 +312,7 @@ class _$AuthFromDevice implements AuthFromDevice {
     required TResult Function(UnAuthEvent value) unAuthEvent,
     required TResult Function(AuthReset value) reset,
     required TResult Function(SetAuthenticated value) setAuthenticated,
+    required TResult Function(CheckFirstTime value) checkFirstTime,
   }) {
     return authFromDevice(this);
   }
@@ -309,6 +325,7 @@ class _$AuthFromDevice implements AuthFromDevice {
     TResult? Function(UnAuthEvent value)? unAuthEvent,
     TResult? Function(AuthReset value)? reset,
     TResult? Function(SetAuthenticated value)? setAuthenticated,
+    TResult? Function(CheckFirstTime value)? checkFirstTime,
   }) {
     return authFromDevice?.call(this);
   }
@@ -321,6 +338,7 @@ class _$AuthFromDevice implements AuthFromDevice {
     TResult Function(UnAuthEvent value)? unAuthEvent,
     TResult Function(AuthReset value)? reset,
     TResult Function(SetAuthenticated value)? setAuthenticated,
+    TResult Function(CheckFirstTime value)? checkFirstTime,
     required TResult orElse(),
   }) {
     if (authFromDevice != null) {
@@ -377,6 +395,7 @@ class _$UnAuthEvent implements UnAuthEvent {
     required TResult Function() unAuthEvent,
     required TResult Function() reset,
     required TResult Function(UserData userData) setAuthenticated,
+    required TResult Function() checkFirstTime,
   }) {
     return unAuthEvent();
   }
@@ -389,6 +408,7 @@ class _$UnAuthEvent implements UnAuthEvent {
     TResult? Function()? unAuthEvent,
     TResult? Function()? reset,
     TResult? Function(UserData userData)? setAuthenticated,
+    TResult? Function()? checkFirstTime,
   }) {
     return unAuthEvent?.call();
   }
@@ -401,6 +421,7 @@ class _$UnAuthEvent implements UnAuthEvent {
     TResult Function()? unAuthEvent,
     TResult Function()? reset,
     TResult Function(UserData userData)? setAuthenticated,
+    TResult Function()? checkFirstTime,
     required TResult orElse(),
   }) {
     if (unAuthEvent != null) {
@@ -417,6 +438,7 @@ class _$UnAuthEvent implements UnAuthEvent {
     required TResult Function(UnAuthEvent value) unAuthEvent,
     required TResult Function(AuthReset value) reset,
     required TResult Function(SetAuthenticated value) setAuthenticated,
+    required TResult Function(CheckFirstTime value) checkFirstTime,
   }) {
     return unAuthEvent(this);
   }
@@ -429,6 +451,7 @@ class _$UnAuthEvent implements UnAuthEvent {
     TResult? Function(UnAuthEvent value)? unAuthEvent,
     TResult? Function(AuthReset value)? reset,
     TResult? Function(SetAuthenticated value)? setAuthenticated,
+    TResult? Function(CheckFirstTime value)? checkFirstTime,
   }) {
     return unAuthEvent?.call(this);
   }
@@ -441,6 +464,7 @@ class _$UnAuthEvent implements UnAuthEvent {
     TResult Function(UnAuthEvent value)? unAuthEvent,
     TResult Function(AuthReset value)? reset,
     TResult Function(SetAuthenticated value)? setAuthenticated,
+    TResult Function(CheckFirstTime value)? checkFirstTime,
     required TResult orElse(),
   }) {
     if (unAuthEvent != null) {
@@ -497,6 +521,7 @@ class _$AuthReset implements AuthReset {
     required TResult Function() unAuthEvent,
     required TResult Function() reset,
     required TResult Function(UserData userData) setAuthenticated,
+    required TResult Function() checkFirstTime,
   }) {
     return reset();
   }
@@ -509,6 +534,7 @@ class _$AuthReset implements AuthReset {
     TResult? Function()? unAuthEvent,
     TResult? Function()? reset,
     TResult? Function(UserData userData)? setAuthenticated,
+    TResult? Function()? checkFirstTime,
   }) {
     return reset?.call();
   }
@@ -521,6 +547,7 @@ class _$AuthReset implements AuthReset {
     TResult Function()? unAuthEvent,
     TResult Function()? reset,
     TResult Function(UserData userData)? setAuthenticated,
+    TResult Function()? checkFirstTime,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -537,6 +564,7 @@ class _$AuthReset implements AuthReset {
     required TResult Function(UnAuthEvent value) unAuthEvent,
     required TResult Function(AuthReset value) reset,
     required TResult Function(SetAuthenticated value) setAuthenticated,
+    required TResult Function(CheckFirstTime value) checkFirstTime,
   }) {
     return reset(this);
   }
@@ -549,6 +577,7 @@ class _$AuthReset implements AuthReset {
     TResult? Function(UnAuthEvent value)? unAuthEvent,
     TResult? Function(AuthReset value)? reset,
     TResult? Function(SetAuthenticated value)? setAuthenticated,
+    TResult? Function(CheckFirstTime value)? checkFirstTime,
   }) {
     return reset?.call(this);
   }
@@ -561,6 +590,7 @@ class _$AuthReset implements AuthReset {
     TResult Function(UnAuthEvent value)? unAuthEvent,
     TResult Function(AuthReset value)? reset,
     TResult Function(SetAuthenticated value)? setAuthenticated,
+    TResult Function(CheckFirstTime value)? checkFirstTime,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -655,6 +685,7 @@ class _$SetAuthenticated implements SetAuthenticated {
     required TResult Function() unAuthEvent,
     required TResult Function() reset,
     required TResult Function(UserData userData) setAuthenticated,
+    required TResult Function() checkFirstTime,
   }) {
     return setAuthenticated(userData);
   }
@@ -667,6 +698,7 @@ class _$SetAuthenticated implements SetAuthenticated {
     TResult? Function()? unAuthEvent,
     TResult? Function()? reset,
     TResult? Function(UserData userData)? setAuthenticated,
+    TResult? Function()? checkFirstTime,
   }) {
     return setAuthenticated?.call(userData);
   }
@@ -679,6 +711,7 @@ class _$SetAuthenticated implements SetAuthenticated {
     TResult Function()? unAuthEvent,
     TResult Function()? reset,
     TResult Function(UserData userData)? setAuthenticated,
+    TResult Function()? checkFirstTime,
     required TResult orElse(),
   }) {
     if (setAuthenticated != null) {
@@ -695,6 +728,7 @@ class _$SetAuthenticated implements SetAuthenticated {
     required TResult Function(UnAuthEvent value) unAuthEvent,
     required TResult Function(AuthReset value) reset,
     required TResult Function(SetAuthenticated value) setAuthenticated,
+    required TResult Function(CheckFirstTime value) checkFirstTime,
   }) {
     return setAuthenticated(this);
   }
@@ -707,6 +741,7 @@ class _$SetAuthenticated implements SetAuthenticated {
     TResult? Function(UnAuthEvent value)? unAuthEvent,
     TResult? Function(AuthReset value)? reset,
     TResult? Function(SetAuthenticated value)? setAuthenticated,
+    TResult? Function(CheckFirstTime value)? checkFirstTime,
   }) {
     return setAuthenticated?.call(this);
   }
@@ -719,6 +754,7 @@ class _$SetAuthenticated implements SetAuthenticated {
     TResult Function(UnAuthEvent value)? unAuthEvent,
     TResult Function(AuthReset value)? reset,
     TResult Function(SetAuthenticated value)? setAuthenticated,
+    TResult Function(CheckFirstTime value)? checkFirstTime,
     required TResult orElse(),
   }) {
     if (setAuthenticated != null) {
@@ -740,6 +776,132 @@ abstract class SetAuthenticated implements AuthEvent {
 }
 
 /// @nodoc
+abstract class _$$CheckFirstTimeCopyWith<$Res> {
+  factory _$$CheckFirstTimeCopyWith(
+          _$CheckFirstTime value, $Res Function(_$CheckFirstTime) then) =
+      __$$CheckFirstTimeCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CheckFirstTimeCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$CheckFirstTime>
+    implements _$$CheckFirstTimeCopyWith<$Res> {
+  __$$CheckFirstTimeCopyWithImpl(
+      _$CheckFirstTime _value, $Res Function(_$CheckFirstTime) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CheckFirstTime implements CheckFirstTime {
+  const _$CheckFirstTime();
+
+  @override
+  String toString() {
+    return 'AuthEvent.checkFirstTime()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CheckFirstTime);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() authFromDevice,
+    required TResult Function() unAuthEvent,
+    required TResult Function() reset,
+    required TResult Function(UserData userData) setAuthenticated,
+    required TResult Function() checkFirstTime,
+  }) {
+    return checkFirstTime();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? authFromDevice,
+    TResult? Function()? unAuthEvent,
+    TResult? Function()? reset,
+    TResult? Function(UserData userData)? setAuthenticated,
+    TResult? Function()? checkFirstTime,
+  }) {
+    return checkFirstTime?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? authFromDevice,
+    TResult Function()? unAuthEvent,
+    TResult Function()? reset,
+    TResult Function(UserData userData)? setAuthenticated,
+    TResult Function()? checkFirstTime,
+    required TResult orElse(),
+  }) {
+    if (checkFirstTime != null) {
+      return checkFirstTime();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(AuthFromDevice value) authFromDevice,
+    required TResult Function(UnAuthEvent value) unAuthEvent,
+    required TResult Function(AuthReset value) reset,
+    required TResult Function(SetAuthenticated value) setAuthenticated,
+    required TResult Function(CheckFirstTime value) checkFirstTime,
+  }) {
+    return checkFirstTime(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(AuthFromDevice value)? authFromDevice,
+    TResult? Function(UnAuthEvent value)? unAuthEvent,
+    TResult? Function(AuthReset value)? reset,
+    TResult? Function(SetAuthenticated value)? setAuthenticated,
+    TResult? Function(CheckFirstTime value)? checkFirstTime,
+  }) {
+    return checkFirstTime?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(AuthFromDevice value)? authFromDevice,
+    TResult Function(UnAuthEvent value)? unAuthEvent,
+    TResult Function(AuthReset value)? reset,
+    TResult Function(SetAuthenticated value)? setAuthenticated,
+    TResult Function(CheckFirstTime value)? checkFirstTime,
+    required TResult orElse(),
+  }) {
+    if (checkFirstTime != null) {
+      return checkFirstTime(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckFirstTime implements AuthEvent {
+  const factory CheckFirstTime() = _$CheckFirstTime;
+}
+
+/// @nodoc
 mixin _$AuthState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -748,6 +910,7 @@ mixin _$AuthState {
     required TResult Function() authLoading,
     required TResult Function(UserData data) authenticated,
     required TResult Function(Failure failure) authFail,
+    required TResult Function(bool firstTime) firstTimeState,
   }) =>
       throw _privateConstructorUsedError;
 
@@ -758,6 +921,7 @@ mixin _$AuthState {
     TResult? Function()? authLoading,
     TResult? Function(UserData data)? authenticated,
     TResult? Function(Failure failure)? authFail,
+    TResult? Function(bool firstTime)? firstTimeState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -767,6 +931,7 @@ mixin _$AuthState {
     TResult Function()? authLoading,
     TResult Function(UserData data)? authenticated,
     TResult Function(Failure failure)? authFail,
+    TResult Function(bool firstTime)? firstTimeState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -778,6 +943,7 @@ mixin _$AuthState {
     required TResult Function(AuthLoading value) authLoading,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(AuthFail value) authFail,
+    required TResult Function(FirstTimeState value) firstTimeState,
   }) =>
       throw _privateConstructorUsedError;
 
@@ -788,6 +954,7 @@ mixin _$AuthState {
     TResult? Function(AuthLoading value)? authLoading,
     TResult? Function(Authenticated value)? authenticated,
     TResult? Function(AuthFail value)? authFail,
+    TResult? Function(FirstTimeState value)? firstTimeState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -797,6 +964,7 @@ mixin _$AuthState {
     TResult Function(AuthLoading value)? authLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(AuthFail value)? authFail,
+    TResult Function(FirstTimeState value)? firstTimeState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -862,6 +1030,7 @@ class _$_Initial implements _Initial {
     required TResult Function() authLoading,
     required TResult Function(UserData data) authenticated,
     required TResult Function(Failure failure) authFail,
+    required TResult Function(bool firstTime) firstTimeState,
   }) {
     return initial();
   }
@@ -874,6 +1043,7 @@ class _$_Initial implements _Initial {
     TResult? Function()? authLoading,
     TResult? Function(UserData data)? authenticated,
     TResult? Function(Failure failure)? authFail,
+    TResult? Function(bool firstTime)? firstTimeState,
   }) {
     return initial?.call();
   }
@@ -886,6 +1056,7 @@ class _$_Initial implements _Initial {
     TResult Function()? authLoading,
     TResult Function(UserData data)? authenticated,
     TResult Function(Failure failure)? authFail,
+    TResult Function(bool firstTime)? firstTimeState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -902,6 +1073,7 @@ class _$_Initial implements _Initial {
     required TResult Function(AuthLoading value) authLoading,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(AuthFail value) authFail,
+    required TResult Function(FirstTimeState value) firstTimeState,
   }) {
     return initial(this);
   }
@@ -914,6 +1086,7 @@ class _$_Initial implements _Initial {
     TResult? Function(AuthLoading value)? authLoading,
     TResult? Function(Authenticated value)? authenticated,
     TResult? Function(AuthFail value)? authFail,
+    TResult? Function(FirstTimeState value)? firstTimeState,
   }) {
     return initial?.call(this);
   }
@@ -926,6 +1099,7 @@ class _$_Initial implements _Initial {
     TResult Function(AuthLoading value)? authLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(AuthFail value)? authFail,
+    TResult Function(FirstTimeState value)? firstTimeState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -982,6 +1156,7 @@ class _$UnAuthState implements UnAuthState {
     required TResult Function() authLoading,
     required TResult Function(UserData data) authenticated,
     required TResult Function(Failure failure) authFail,
+    required TResult Function(bool firstTime) firstTimeState,
   }) {
     return unAuth();
   }
@@ -994,6 +1169,7 @@ class _$UnAuthState implements UnAuthState {
     TResult? Function()? authLoading,
     TResult? Function(UserData data)? authenticated,
     TResult? Function(Failure failure)? authFail,
+    TResult? Function(bool firstTime)? firstTimeState,
   }) {
     return unAuth?.call();
   }
@@ -1006,6 +1182,7 @@ class _$UnAuthState implements UnAuthState {
     TResult Function()? authLoading,
     TResult Function(UserData data)? authenticated,
     TResult Function(Failure failure)? authFail,
+    TResult Function(bool firstTime)? firstTimeState,
     required TResult orElse(),
   }) {
     if (unAuth != null) {
@@ -1022,6 +1199,7 @@ class _$UnAuthState implements UnAuthState {
     required TResult Function(AuthLoading value) authLoading,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(AuthFail value) authFail,
+    required TResult Function(FirstTimeState value) firstTimeState,
   }) {
     return unAuth(this);
   }
@@ -1034,6 +1212,7 @@ class _$UnAuthState implements UnAuthState {
     TResult? Function(AuthLoading value)? authLoading,
     TResult? Function(Authenticated value)? authenticated,
     TResult? Function(AuthFail value)? authFail,
+    TResult? Function(FirstTimeState value)? firstTimeState,
   }) {
     return unAuth?.call(this);
   }
@@ -1046,6 +1225,7 @@ class _$UnAuthState implements UnAuthState {
     TResult Function(AuthLoading value)? authLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(AuthFail value)? authFail,
+    TResult Function(FirstTimeState value)? firstTimeState,
     required TResult orElse(),
   }) {
     if (unAuth != null) {
@@ -1102,6 +1282,7 @@ class _$AuthLoading implements AuthLoading {
     required TResult Function() authLoading,
     required TResult Function(UserData data) authenticated,
     required TResult Function(Failure failure) authFail,
+    required TResult Function(bool firstTime) firstTimeState,
   }) {
     return authLoading();
   }
@@ -1114,6 +1295,7 @@ class _$AuthLoading implements AuthLoading {
     TResult? Function()? authLoading,
     TResult? Function(UserData data)? authenticated,
     TResult? Function(Failure failure)? authFail,
+    TResult? Function(bool firstTime)? firstTimeState,
   }) {
     return authLoading?.call();
   }
@@ -1126,6 +1308,7 @@ class _$AuthLoading implements AuthLoading {
     TResult Function()? authLoading,
     TResult Function(UserData data)? authenticated,
     TResult Function(Failure failure)? authFail,
+    TResult Function(bool firstTime)? firstTimeState,
     required TResult orElse(),
   }) {
     if (authLoading != null) {
@@ -1142,6 +1325,7 @@ class _$AuthLoading implements AuthLoading {
     required TResult Function(AuthLoading value) authLoading,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(AuthFail value) authFail,
+    required TResult Function(FirstTimeState value) firstTimeState,
   }) {
     return authLoading(this);
   }
@@ -1154,6 +1338,7 @@ class _$AuthLoading implements AuthLoading {
     TResult? Function(AuthLoading value)? authLoading,
     TResult? Function(Authenticated value)? authenticated,
     TResult? Function(AuthFail value)? authFail,
+    TResult? Function(FirstTimeState value)? firstTimeState,
   }) {
     return authLoading?.call(this);
   }
@@ -1166,6 +1351,7 @@ class _$AuthLoading implements AuthLoading {
     TResult Function(AuthLoading value)? authLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(AuthFail value)? authFail,
+    TResult Function(FirstTimeState value)? firstTimeState,
     required TResult orElse(),
   }) {
     if (authLoading != null) {
@@ -1259,6 +1445,7 @@ class _$Authenticated implements Authenticated {
     required TResult Function() authLoading,
     required TResult Function(UserData data) authenticated,
     required TResult Function(Failure failure) authFail,
+    required TResult Function(bool firstTime) firstTimeState,
   }) {
     return authenticated(data);
   }
@@ -1271,6 +1458,7 @@ class _$Authenticated implements Authenticated {
     TResult? Function()? authLoading,
     TResult? Function(UserData data)? authenticated,
     TResult? Function(Failure failure)? authFail,
+    TResult? Function(bool firstTime)? firstTimeState,
   }) {
     return authenticated?.call(data);
   }
@@ -1283,6 +1471,7 @@ class _$Authenticated implements Authenticated {
     TResult Function()? authLoading,
     TResult Function(UserData data)? authenticated,
     TResult Function(Failure failure)? authFail,
+    TResult Function(bool firstTime)? firstTimeState,
     required TResult orElse(),
   }) {
     if (authenticated != null) {
@@ -1299,6 +1488,7 @@ class _$Authenticated implements Authenticated {
     required TResult Function(AuthLoading value) authLoading,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(AuthFail value) authFail,
+    required TResult Function(FirstTimeState value) firstTimeState,
   }) {
     return authenticated(this);
   }
@@ -1311,6 +1501,7 @@ class _$Authenticated implements Authenticated {
     TResult? Function(AuthLoading value)? authLoading,
     TResult? Function(Authenticated value)? authenticated,
     TResult? Function(AuthFail value)? authFail,
+    TResult? Function(FirstTimeState value)? firstTimeState,
   }) {
     return authenticated?.call(this);
   }
@@ -1323,6 +1514,7 @@ class _$Authenticated implements Authenticated {
     TResult Function(AuthLoading value)? authLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(AuthFail value)? authFail,
+    TResult Function(FirstTimeState value)? firstTimeState,
     required TResult orElse(),
   }) {
     if (authenticated != null) {
@@ -1411,6 +1603,7 @@ class _$AuthFail implements AuthFail {
     required TResult Function() authLoading,
     required TResult Function(UserData data) authenticated,
     required TResult Function(Failure failure) authFail,
+    required TResult Function(bool firstTime) firstTimeState,
   }) {
     return authFail(failure);
   }
@@ -1423,6 +1616,7 @@ class _$AuthFail implements AuthFail {
     TResult? Function()? authLoading,
     TResult? Function(UserData data)? authenticated,
     TResult? Function(Failure failure)? authFail,
+    TResult? Function(bool firstTime)? firstTimeState,
   }) {
     return authFail?.call(failure);
   }
@@ -1435,6 +1629,7 @@ class _$AuthFail implements AuthFail {
     TResult Function()? authLoading,
     TResult Function(UserData data)? authenticated,
     TResult Function(Failure failure)? authFail,
+    TResult Function(bool firstTime)? firstTimeState,
     required TResult orElse(),
   }) {
     if (authFail != null) {
@@ -1451,6 +1646,7 @@ class _$AuthFail implements AuthFail {
     required TResult Function(AuthLoading value) authLoading,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(AuthFail value) authFail,
+    required TResult Function(FirstTimeState value) firstTimeState,
   }) {
     return authFail(this);
   }
@@ -1463,6 +1659,7 @@ class _$AuthFail implements AuthFail {
     TResult? Function(AuthLoading value)? authLoading,
     TResult? Function(Authenticated value)? authenticated,
     TResult? Function(AuthFail value)? authFail,
+    TResult? Function(FirstTimeState value)? firstTimeState,
   }) {
     return authFail?.call(this);
   }
@@ -1475,6 +1672,7 @@ class _$AuthFail implements AuthFail {
     TResult Function(AuthLoading value)? authLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(AuthFail value)? authFail,
+    TResult Function(FirstTimeState value)? firstTimeState,
     required TResult orElse(),
   }) {
     if (authFail != null) {
@@ -1491,5 +1689,166 @@ abstract class AuthFail implements AuthState {
 
   @JsonKey(ignore: true)
   _$$AuthFailCopyWith<_$AuthFail> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FirstTimeStateCopyWith<$Res> {
+  factory _$$FirstTimeStateCopyWith(
+          _$FirstTimeState value, $Res Function(_$FirstTimeState) then) =
+      __$$FirstTimeStateCopyWithImpl<$Res>;
+
+  @useResult
+  $Res call({bool firstTime});
+}
+
+/// @nodoc
+class __$$FirstTimeStateCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$FirstTimeState>
+    implements _$$FirstTimeStateCopyWith<$Res> {
+  __$$FirstTimeStateCopyWithImpl(
+      _$FirstTimeState _value, $Res Function(_$FirstTimeState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? firstTime = null,
+  }) {
+    return _then(_$FirstTimeState(
+      firstTime: null == firstTime
+          ? _value.firstTime
+          : firstTime // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FirstTimeState implements FirstTimeState {
+  const _$FirstTimeState({required this.firstTime});
+
+  @override
+  final bool firstTime;
+
+  @override
+  String toString() {
+    return 'AuthState.firstTimeState(firstTime: $firstTime)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FirstTimeState &&
+            (identical(other.firstTime, firstTime) ||
+                other.firstTime == firstTime));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, firstTime);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FirstTimeStateCopyWith<_$FirstTimeState> get copyWith =>
+      __$$FirstTimeStateCopyWithImpl<_$FirstTimeState>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() unAuth,
+    required TResult Function() authLoading,
+    required TResult Function(UserData data) authenticated,
+    required TResult Function(Failure failure) authFail,
+    required TResult Function(bool firstTime) firstTimeState,
+  }) {
+    return firstTimeState(firstTime);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? unAuth,
+    TResult? Function()? authLoading,
+    TResult? Function(UserData data)? authenticated,
+    TResult? Function(Failure failure)? authFail,
+    TResult? Function(bool firstTime)? firstTimeState,
+  }) {
+    return firstTimeState?.call(firstTime);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? unAuth,
+    TResult Function()? authLoading,
+    TResult Function(UserData data)? authenticated,
+    TResult Function(Failure failure)? authFail,
+    TResult Function(bool firstTime)? firstTimeState,
+    required TResult orElse(),
+  }) {
+    if (firstTimeState != null) {
+      return firstTimeState(firstTime);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(UnAuthState value) unAuth,
+    required TResult Function(AuthLoading value) authLoading,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(AuthFail value) authFail,
+    required TResult Function(FirstTimeState value) firstTimeState,
+  }) {
+    return firstTimeState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(UnAuthState value)? unAuth,
+    TResult? Function(AuthLoading value)? authLoading,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(AuthFail value)? authFail,
+    TResult? Function(FirstTimeState value)? firstTimeState,
+  }) {
+    return firstTimeState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(UnAuthState value)? unAuth,
+    TResult Function(AuthLoading value)? authLoading,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(AuthFail value)? authFail,
+    TResult Function(FirstTimeState value)? firstTimeState,
+    required TResult orElse(),
+  }) {
+    if (firstTimeState != null) {
+      return firstTimeState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FirstTimeState implements AuthState {
+  const factory FirstTimeState({required final bool firstTime}) =
+      _$FirstTimeState;
+
+  bool get firstTime;
+
+  @JsonKey(ignore: true)
+  _$$FirstTimeStateCopyWith<_$FirstTimeState> get copyWith =>
       throw _privateConstructorUsedError;
 }

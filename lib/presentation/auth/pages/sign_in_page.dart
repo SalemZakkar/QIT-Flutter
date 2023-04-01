@@ -44,7 +44,9 @@ class _SignInPageState extends State<SignInPage> with sz.ScreenUtil {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          toolbarHeight: 50.h,
+        ),
         body: BlocListener<SignInBloc, sz.BaseState>(
           bloc: bloc,
           listener: (context, state) {
@@ -66,6 +68,7 @@ class _SignInPageState extends State<SignInPage> with sz.ScreenUtil {
             }
           },
           child: Container(
+            alignment: Alignment.center,
             padding: const EdgeInsets.symmetric(horizontal: 20),
             constraints: const BoxConstraints.expand(),
             child: SingleChildScrollView(
@@ -74,9 +77,9 @@ class _SignInPageState extends State<SignInPage> with sz.ScreenUtil {
                 key: globalKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(Assets.images.signin.path, width: 200.w),
+                    Image.asset(Assets.images.signin.path, width: 100.w),
                     80.h.spaceHeight(),
                     TextFormField(
                       controller: email,

@@ -52,7 +52,7 @@ class _SignUpPageState extends State<SignUpPage> with sz.ScreenUtil {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 60.h,
+        toolbarHeight: 50.h,
       ),
       body: Container(
         padding: const EdgeInsets.only(right: 20, left: 20),

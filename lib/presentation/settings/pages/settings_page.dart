@@ -7,8 +7,8 @@ import 'package:qit_flutter/presentation/auth/pages/sign_in_page.dart';
 import 'package:qit_flutter/presentation/core/blocs/auth_bloc/auth_bloc.dart';
 import 'package:qit_flutter/presentation/core/extension/screen_util_extension.dart';
 import 'package:qit_flutter/presentation/core/routes.dart';
+import 'package:qit_flutter/presentation/core/widgets/selectable_button.dart';
 import 'package:qit_flutter/presentation/settings/blocs/sign_out_bloc/sign_out_bloc.dart';
-import 'package:qit_flutter/presentation/settings/pages/selectable_button.dart';
 import 'package:qit_flutter/presentation/settings/pages/user_card.dart';
 import 'package:salem_package/enums/failure_type.dart';
 import 'package:salem_package/salem_package.dart';
@@ -115,6 +115,7 @@ class _SettingsPageState extends State<SettingsPage> with sz.ScreenUtil {
                           onTap: () {
                             if (!en) {
                               context.setLocale(const Locale("en"));
+                              WidgetsBinding.instance.performReassemble();
                             }
                           },
                           child: SelectableButton(
@@ -124,6 +125,7 @@ class _SettingsPageState extends State<SettingsPage> with sz.ScreenUtil {
                           onTap: () {
                             if (en) {
                               context.setLocale(const Locale("ar"));
+                              WidgetsBinding.instance.performReassemble();
                             }
                           },
                           child: SelectableButton(
@@ -139,7 +141,7 @@ class _SettingsPageState extends State<SettingsPage> with sz.ScreenUtil {
                       },
                       child: Container(
                         width: 1000.w,
-                        height: 50,
+                        height: 50.h,
                         decoration: BoxDecoration(
                           color: Theme.of(context).colorScheme.error,
                           borderRadius: BorderRadius.circular(15),

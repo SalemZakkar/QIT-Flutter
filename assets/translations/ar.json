@@ -24,5 +24,9 @@
   "ok" : "حسناً",
   "error" : "خطأ",
   "success" : "تم بنجاح",
-  "settings" : "الإعدادات"
+  "settings" : "الإعدادات",
+  "continue" : "متابعة",
+  "welcome" : "مرحباً",
+  "our_products" : "منتجاتنا",
+  "search" : "بحث"
 }

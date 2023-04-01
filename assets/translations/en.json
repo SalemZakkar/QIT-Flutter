@@ -24,5 +24,9 @@
   "ok" : "Ok",
   "error" : "Error",
   "success" : "Successfully",
-  "settings" : "Settings"
+  "settings" : "Settings",
+  "continue" : "Continue",
+  "welcome" : "Welcome",
+  "our_products" : "Our Products",
+  "search" : "Search"
 }

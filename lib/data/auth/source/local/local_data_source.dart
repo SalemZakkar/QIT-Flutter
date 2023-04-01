@@ -18,6 +18,15 @@ class LocalDataSource {
   String? get password =>
       sharedPreferences.getString(SharedPreferenceKeys.password);
 
+  bool get firstTime {
+    bool first =
+        sharedPreferences.getBool(SharedPreferenceKeys.firstTime) ?? true;
+    if (first) {
+      sharedPreferences.setBool(SharedPreferenceKeys.firstTime, false);
+    }
+    return first;
+  }
+
   void setLoggedIn(bool status) =>
       sharedPreferences.setBool(SharedPreferenceKeys.loggedIn, status);
 
@@ -28,7 +37,12 @@ class LocalDataSource {
     sharedPreferences.setBool(SharedPreferenceKeys.loggedIn, true);
   }
 
-  void logout() => sharedPreferences.clear();
+  void logout() {
+    sharedPreferences.remove(SharedPreferenceKeys.email);
+    sharedPreferences.remove(SharedPreferenceKeys.password);
+    sharedPreferences.remove(SharedPreferenceKeys.token);
+    sharedPreferences.remove(SharedPreferenceKeys.loggedIn);
+  }
 
   @override
   String toString() {

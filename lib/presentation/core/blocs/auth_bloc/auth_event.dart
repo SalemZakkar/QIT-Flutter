@@ -12,4 +12,6 @@ class AuthEvent with _$AuthEvent {
 
   const factory AuthEvent.setAuthenticated({required UserData userData}) =
       SetAuthenticated;
+
+  const factory AuthEvent.checkFirstTime() = CheckFirstTime;
 }

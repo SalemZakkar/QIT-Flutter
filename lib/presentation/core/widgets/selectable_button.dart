@@ -11,8 +11,8 @@ class SelectableButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 80,
-      height: 40,
+      width: 80.w,
+      height: 35.h,
       decoration: BoxDecoration(
           color: selected
               ? Theme.of(context).primaryColor

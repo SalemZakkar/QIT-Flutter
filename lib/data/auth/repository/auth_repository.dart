@@ -5,12 +5,14 @@ import 'package:qit_flutter/domain/auth/entites/user_data_entity/user_data.dart'
 import 'package:salem_package/models/failure.dart';
 
 import '../../../domain/auth/repository/auth_repository.dart';
+import '../source/local/local_data_source.dart';
 
 @LazySingleton(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
   AuthRemote remote;
+  LocalDataSource localDataSource;
 
-  AuthRepositoryImpl(this.remote);
+  AuthRepositoryImpl(this.remote, this.localDataSource);
 
   @override
   Future<Either<Failure, UserData>> signUp(
@@ -31,5 +33,10 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<Either<Failure, Unit>> signInOut() async {
     return await remote.signOut();
+  }
+
+  @override
+  bool firstTime() {
+    return localDataSource.firstTime;
   }
 }
