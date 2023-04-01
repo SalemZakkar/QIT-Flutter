@@ -12,7 +12,7 @@ import 'package:salem_package/models/failure.dart';
 @LazySingleton(as: HomeRemote)
 class HomeRemoteImpl extends HomeRemote with BaseRepository {
   Dio dio;
-
+  CancelToken cancelToken = CancelToken();
   HomeRemoteImpl(this.dio);
 
   @override

@@ -92,6 +92,7 @@ class _HomeSearchPageState extends State<HomeSearchPage> with sz.ScreenUtil {
                 border: InputBorder.none,
                 suffixIcon: InkWell(
                   onTap: () {
+                    FocusManager.instance.primaryFocus?.unfocus();
                     reset();
                     bloc.add(GetProductsBySeacrh(
                         10, page, textEditingController.text));

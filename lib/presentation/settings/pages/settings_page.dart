@@ -26,13 +26,16 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> with sz.ScreenUtil {
   bool auth = getIt<AuthBloc>().state is Authenticated;
   var bloc = getIt<SignOutBloc>();
-
-  @override
-  void initState() {
+  void initPage() {
     errorMessages = {
       FailureType.networkError: "no_network".tr(),
       FailureType.serverError: "server_error".tr()
     };
+  }
+
+  @override
+  void initState() {
+    initPage();
     super.initState();
   }
 
@@ -115,6 +118,7 @@ class _SettingsPageState extends State<SettingsPage> with sz.ScreenUtil {
                           onTap: () {
                             if (!en) {
                               context.setLocale(const Locale("en"));
+                              initPage();
                               WidgetsBinding.instance.performReassemble();
                             }
                           },
@@ -125,6 +129,7 @@ class _SettingsPageState extends State<SettingsPage> with sz.ScreenUtil {
                           onTap: () {
                             if (en) {
                               context.setLocale(const Locale("ar"));
+                              initPage();
                               WidgetsBinding.instance.performReassemble();
                             }
                           },
