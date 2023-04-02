@@ -17,7 +17,7 @@ class GetProductsBloc
 
   GetProductsBloc(this.useCase) : super(const BaseState()) {
     on<GetProductsEvent>((event, emit) {
-      // TODO: implement event handler
+
     });
     on<GetProductsListEvent>((event, emit) async {
       emit(state.setProgress());

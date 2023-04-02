@@ -114,6 +114,7 @@ Future<_i1.GetIt> init(
         gh<_i5.Dio>(),
         gh<_i16.LocalDataSource>(),
         gh<_i4.CartLocalSource>(),
+        gh<_i6.HomeRemote>(),
       ));
   gh.lazySingleton<_i19.AuthRemote>(() => _i20.AuthRemoteImpl(
         gh<_i5.Dio>(),

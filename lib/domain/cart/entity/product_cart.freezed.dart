@@ -17,15 +17,10 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$ProductCart {
   String get image => throw _privateConstructorUsedError;
-
   String get title => throw _privateConstructorUsedError;
-
   int get id => throw _privateConstructorUsedError;
-
   int get count => throw _privateConstructorUsedError;
-
   String get total => throw _privateConstructorUsedError;
-
   String get currency => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -38,7 +33,6 @@ abstract class $ProductCartCopyWith<$Res> {
   factory $ProductCartCopyWith(
           ProductCart value, $Res Function(ProductCart) then) =
       _$ProductCartCopyWithImpl<$Res, ProductCart>;
-
   @useResult
   $Res call(
       {String image,
@@ -56,7 +50,6 @@ class _$ProductCartCopyWithImpl<$Res, $Val extends ProductCart>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -105,7 +98,6 @@ abstract class _$$_ProductCartCopyWith<$Res>
   factory _$$_ProductCartCopyWith(
           _$_ProductCart value, $Res Function(_$_ProductCart) then) =
       __$$_ProductCartCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -229,22 +221,16 @@ abstract class _ProductCart implements ProductCart {
 
   @override
   String get image;
-
   @override
   String get title;
-
   @override
   int get id;
-
   @override
   int get count;
-
   @override
   String get total;
-
   @override
   String get currency;
-
   @override
   @JsonKey(ignore: true)
   _$$_ProductCartCopyWith<_$_ProductCart> get copyWith =>

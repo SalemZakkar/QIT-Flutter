@@ -7,12 +7,11 @@ class CartLocalSource {
   Future<void> saveData(ProductEntity entity) async {
     var box = await Hive.openBox("Products");
     box.delete(entity.id);
-    box.put(entity.id, {
+    await box.put(entity.id, {
       "title": entity.title,
       "image": entity.image.conversions.large,
       "id": entity.id
     });
-    box.close();
   }
 
   Future<List<Map<dynamic, dynamic>>> getData() async {
@@ -23,7 +22,6 @@ class CartLocalSource {
     map.forEach((key, value) {
       list.add(value);
     });
-    box.close();
     return list;
   }
 
@@ -37,6 +35,6 @@ class CartLocalSource {
   Future<void> clear() async {
     var box = await Hive.openBox("Products");
     box.clear();
-    box.close();
+    // box.close();
   }
 }

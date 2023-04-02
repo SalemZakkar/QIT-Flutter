@@ -24,8 +24,6 @@ dependencies:
   easy_localization: ^3.0.1
   flutter_screenutil: ^5.7.0
   cached_network_image: ^3.2.3
-  sqflite: ^2.2.6
-  path: ^1.8.2
   hive:
   hive_flutter:
   salem_package:
@@ -43,6 +41,7 @@ dev_dependencies:
   flutter_gen_runner:
   injectable_generator:
   json_serializable: ^6.6.1
+  flutter_launcher_icons: ^0.12.0
 
 flutter:
 
@@ -55,3 +54,7 @@ flutter_gen:
   output: lib/presentation/core/sources/
 
 
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.png"

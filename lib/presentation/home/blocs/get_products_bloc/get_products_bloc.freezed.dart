@@ -22,7 +22,6 @@ mixin _$GetProductsEvent {
     required TResult Function(int n, int p) getProducts,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
@@ -36,14 +35,12 @@ mixin _$GetProductsEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(GetProductsListEvent value) getProducts,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
@@ -73,7 +70,6 @@ class _$GetProductsEventCopyWithImpl<$Res, $Val extends GetProductsEvent>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 }
@@ -184,7 +180,6 @@ abstract class _$$GetProductsListEventCopyWith<$Res> {
   factory _$$GetProductsListEventCopyWith(_$GetProductsListEvent value,
           $Res Function(_$GetProductsListEvent) then) =
       __$$GetProductsListEventCopyWithImpl<$Res>;
-
   @useResult
   $Res call({int n, int p});
 }
@@ -318,9 +313,7 @@ abstract class GetProductsListEvent implements GetProductsEvent {
       {required final int n, required final int p}) = _$GetProductsListEvent;
 
   int get n;
-
   int get p;
-
   @JsonKey(ignore: true)
   _$$GetProductsListEventCopyWith<_$GetProductsListEvent> get copyWith =>
       throw _privateConstructorUsedError;

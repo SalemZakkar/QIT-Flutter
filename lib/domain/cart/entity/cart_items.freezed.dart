@@ -17,9 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$CartItems {
   List<ProductCart> get data => throw _privateConstructorUsedError;
-
   String get total => throw _privateConstructorUsedError;
-
   String get currency => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -31,7 +29,6 @@ mixin _$CartItems {
 abstract class $CartItemsCopyWith<$Res> {
   factory $CartItemsCopyWith(CartItems value, $Res Function(CartItems) then) =
       _$CartItemsCopyWithImpl<$Res, CartItems>;
-
   @useResult
   $Res call({List<ProductCart> data, String total, String currency});
 }
@@ -43,7 +40,6 @@ class _$CartItemsCopyWithImpl<$Res, $Val extends CartItems>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -76,7 +72,6 @@ abstract class _$$_CartItemsCopyWith<$Res> implements $CartItemsCopyWith<$Res> {
   factory _$$_CartItemsCopyWith(
           _$_CartItems value, $Res Function(_$_CartItems) then) =
       __$$_CartItemsCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({List<ProductCart> data, String total, String currency});
@@ -124,7 +119,6 @@ class _$_CartItems implements _CartItems {
       : _data = data;
 
   final List<ProductCart> _data;
-
   @override
   List<ProductCart> get data {
     if (_data is EqualUnmodifiableListView) return _data;
@@ -172,13 +166,10 @@ abstract class _CartItems implements CartItems {
 
   @override
   List<ProductCart> get data;
-
   @override
   String get total;
-
   @override
   String get currency;
-
   @override
   @JsonKey(ignore: true)
   _$$_CartItemsCopyWith<_$_CartItems> get copyWith =>

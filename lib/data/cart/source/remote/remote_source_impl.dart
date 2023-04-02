@@ -6,12 +6,14 @@ import 'package:injectable/injectable.dart';
 import 'package:qit_flutter/data/cart/models/cart_model.dart';
 import 'package:qit_flutter/data/cart/source/remote/remote_source.dart';
 import 'package:qit_flutter/data/core/base_repository/base_repository.dart';
+import 'package:qit_flutter/data/home/models/product_model/product_model.dart';
 import 'package:qit_flutter/domain/cart/entity/cart_items.dart';
 import 'package:qit_flutter/domain/cart/entity/product_cart.dart';
 import 'package:qit_flutter/domain/home/entities/product/product_entity.dart';
 import 'package:salem_package/models/failure.dart';
 
 import '../../../auth/source/local/local_data_source.dart';
+import '../../../home/source/remote/home_remote.dart';
 import '../local/cart_local_source.dart';
 
 @LazySingleton(as: RemoteSource)
@@ -19,8 +21,8 @@ class RemoteSourceImpl extends RemoteSource with BaseRepository {
   final Dio dio;
   LocalDataSource auth;
   CartLocalSource localSource;
-
-  RemoteSourceImpl(this.dio, this.auth, this.localSource);
+  HomeRemote homeRemote;
+  RemoteSourceImpl(this.dio, this.auth, this.localSource, this.homeRemote);
 
   @override
   Future<Either<Failure, Unit>> addToCart(
@@ -49,15 +51,26 @@ class RemoteSourceImpl extends RemoteSource with BaseRepository {
             HttpHeaders.authorizationHeader: "Bearer ${auth.token}"
           }));
       CartModel cartModel = CartModel.fromJson(response.data);
-      List<ProductCart> data = [];
       List<Map> localProd = await localSource.getData();
       List<Product> products = [];
       products.addAll(cartModel.data!.products ?? []);
-      if (products.isNotEmpty) {
-        products.sort((a, b) {
-          return a.productId!.compareTo(b.productId!);
-        });
+      products.sort((a, b) {
+        return a.productId!.compareTo(b.productId!);
+      });
+      if (!matched(localProd, products)) {
+        await localSource.clear();
+        for (int i = 0; i < products.length; i++) {
+          Either<Failure, ProductEntity> res =
+              await homeRemote.getProductById(products[i].productId!);
+          res.fold((l) {
+            return l;
+          }, (r) {
+            localSource.saveData(r);
+          });
+        }
       }
+      localProd = await localSource.getData();
+      List<ProductCart> data = [];
       for (int i = 0; i < localProd.length; i++) {
         data.add(ProductCart(
             image: localProd[i]["image"],
@@ -89,5 +102,16 @@ class RemoteSourceImpl extends RemoteSource with BaseRepository {
       }
       return unit;
     });
+  }
+
+  bool matched(
+      List<Map<dynamic, dynamic>> products, List<Product> productEntities) {
+    int cnt = 0;
+    for (int i = 0; i < products.length && i < productEntities.length; i++) {
+      if (products[i]["id"] == productEntities[i].productId) {
+        cnt++;
+      }
+    }
+    return cnt == products.length && cnt == productEntities.length;
   }
 }

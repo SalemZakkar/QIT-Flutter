@@ -59,7 +59,7 @@ class _CartPageState extends State<CartPage> with sz.ScreenUtil {
       ],
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Cart"),
+          title: Text("cart".tr()),
         ),
         body: Container(
           constraints: const BoxConstraints.expand(),
@@ -73,11 +73,16 @@ class _CartPageState extends State<CartPage> with sz.ScreenUtil {
                       success = true;
                       price = (state.item as CartItems).total;
                       cur = (state.item as CartItems).currency;
+                      if ((state.item as CartItems).data.isEmpty) {
+                        success = false;
+                      }
                       setState(() {});
                     }
                     if (state.fail) {
                       setState(() {
                         success = false;
+                        price = "";
+                        cur = "";
                       });
                     }
                     if (state.progress) {

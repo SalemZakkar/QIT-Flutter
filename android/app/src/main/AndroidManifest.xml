@@ -1,9 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.qitcompany.qit_flutter">
-   <application
-        android:label="qit_flutter"
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:label="Qit Flutter"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:exported="true"
