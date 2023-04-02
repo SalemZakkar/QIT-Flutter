@@ -5,6 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:qit_flutter/data/auth/models/user_data/user_data_model.dart';
 import 'package:qit_flutter/data/auth/source/remote/auth_remote.dart';
+import 'package:qit_flutter/data/cart/source/local/cart_local_source.dart';
 import 'package:qit_flutter/data/core/base_repository/base_repository.dart';
 import 'package:salem_package/enums/failure_type.dart';
 import 'package:salem_package/models/failure.dart';
@@ -72,6 +73,7 @@ class AuthRemoteImpl extends AuthRemote with BaseRepository {
             HttpHeaders.authorizationHeader: "Bearer ${localDataSource.token}"
           }));
       localDataSource.logout();
+      CartLocalSource().clear();
       return unit;
     });
   }
