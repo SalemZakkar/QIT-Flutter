@@ -15,8 +15,7 @@ class GetProductBloc extends Bloc<GetProductEvent, BaseState<ProductEntity>> {
   GetProductByIdUseCase getProductByIdUseCase;
 
   GetProductBloc(this.getProductByIdUseCase) : super(const BaseState()) {
-    on<GetProductEvent>((event, emit) {
-    });
+    on<GetProductEvent>((event, emit) {});
     on<GetProductById>((event, emit) async {
       emit(state.setProgress());
       Either res = await getProductByIdUseCase.call(event.id);

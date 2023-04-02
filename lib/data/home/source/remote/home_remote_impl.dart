@@ -13,6 +13,7 @@ import 'package:salem_package/models/failure.dart';
 class HomeRemoteImpl extends HomeRemote with BaseRepository {
   Dio dio;
   CancelToken cancelToken = CancelToken();
+
   HomeRemoteImpl(this.dio);
 
   @override

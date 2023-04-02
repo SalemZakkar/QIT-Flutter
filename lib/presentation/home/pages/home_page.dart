@@ -4,10 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qit_flutter/domain/home/entities/product/product_list_entity.dart';
 import 'package:qit_flutter/injection.dart';
+import 'package:qit_flutter/presentation/cart/pages/cart_page.dart';
 import 'package:qit_flutter/presentation/core/routes.dart';
+import 'package:qit_flutter/presentation/core/widgets/error_widget.dart';
 import 'package:qit_flutter/presentation/home/blocs/get_products_bloc/get_products_bloc.dart';
 import 'package:qit_flutter/presentation/home/pages/search_page.dart';
-import 'package:qit_flutter/presentation/home/pages/widgets/error_widget.dart';
 import 'package:qit_flutter/presentation/home/pages/widgets/product_card.dart';
 import 'package:qit_flutter/presentation/settings/pages/settings_page.dart';
 import 'package:salem_package/bloc/base_state.dart';
@@ -107,7 +108,9 @@ class _HomePageState extends State<HomePage> with sz.ScreenUtil {
             //title: Text("our_products".tr()),
             leading: IconButton(
               icon: const Icon(Icons.shopping_cart),
-              onPressed: () {},
+              onPressed: () {
+                context.router.navigateTo(context, CartPage.routeName);
+              },
             ),
             actions: [
               IconButton(

@@ -77,7 +77,8 @@ class _SplashPageState extends State<SplashPage> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      context.router.navigateTo(context, SignInPage.routeName);
+                      context.router
+                          .navigateTo(context, "${SignInPage.routeName}/true");
                     },
                     child: Container(
                       width: 1000.w,

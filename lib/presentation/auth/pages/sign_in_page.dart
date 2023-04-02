@@ -17,8 +17,9 @@ import '../../core/utils/validator.dart';
 
 class SignInPage extends StatefulWidget {
   static const String routeName = "/signIn";
+  final bool ret;
 
-  const SignInPage({Key? key}) : super(key: key);
+  const SignInPage({Key? key, required this.ret}) : super(key: key);
 
   @override
   State<SignInPage> createState() => _SignInPageState();
@@ -60,8 +61,12 @@ class _SignInPageState extends State<SignInPage> with sz.ScreenUtil {
               });
             }
             if (state.success) {
-              context.router
-                  .navigateTo(context, HomePage.routeName, clearStack: true);
+              if (widget.ret) {
+                context.router.pop(context);
+              } else {
+                context.router
+                    .navigateTo(context, HomePage.routeName, clearStack: true);
+              }
             }
             if (state.fail) {
               showErrorDialog(context, state.failure!.type);
@@ -128,8 +133,8 @@ class _SignInPageState extends State<SignInPage> with sz.ScreenUtil {
                         TextButton(
                             style: Theme.of(context).textButtonTheme.style,
                             onPressed: () {
-                              Navigator.pushNamed(
-                                  context, SignUpPage.routeName);
+                              Navigator.pushNamed(context,
+                                  "${SignUpPage.routeName}/${widget.ret.toString()}");
                             },
                             child: Text(
                               "dont_have_account".tr(),

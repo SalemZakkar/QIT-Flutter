@@ -17,8 +17,9 @@ import '../blocs/sign_up_bloc/sign_up_bloc.dart';
 
 class SignUpPage extends StatefulWidget {
   static const String routeName = "/signUp";
+  final bool ret;
 
-  const SignUpPage({Key? key}) : super(key: key);
+  const SignUpPage({Key? key, required this.ret}) : super(key: key);
 
   @override
   State<SignUpPage> createState() => _SignUpPageState();
@@ -136,8 +137,13 @@ class _SignUpPageState extends State<SignUpPage> with sz.ScreenUtil {
                     }
                     if (state.success) {
                       stopLoading(context);
-                      context.router.navigateTo(context, HomePage.routeName,
-                          clearStack: true);
+                      if (widget.ret) {
+                        context.router.pop(context);
+                        context.router.pop(context);
+                      } else {
+                        context.router.navigateTo(context, HomePage.routeName,
+                            clearStack: true);
+                      }
                     }
                     if (state.fail) {
                       stopLoading(context);

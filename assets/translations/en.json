@@ -28,5 +28,13 @@
   "continue" : "Continue",
   "welcome" : "Welcome",
   "our_products" : "Our Products",
-  "search" : "Search"
+  "search" : "Search",
+  "cart" : "Cart",
+  "count" : "count",
+  "total" : "total",
+  "unit" : "unit",
+  "add_to_cart_success" : "Added To Cart Successfully",
+  "unAuth" : "You Haven't signed in yet !",
+  "cancel" : "cancel",
+  "warning" : "Warning"
 }

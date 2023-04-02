@@ -16,6 +16,7 @@ import 'package:salem_package/salem_package.dart' as sz;
 
 class SettingsPage extends StatefulWidget {
   static const String routeName = "/settings";
+  static const String reset = "/settings_reset";
 
   const SettingsPage({Key? key}) : super(key: key);
 
@@ -26,6 +27,7 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> with sz.ScreenUtil {
   bool auth = getIt<AuthBloc>().state is Authenticated;
   var bloc = getIt<SignOutBloc>();
+
   void initPage() {
     errorMessages = {
       FailureType.networkError: "no_network".tr(),
@@ -85,8 +87,8 @@ class _SettingsPageState extends State<SettingsPage> with sz.ScreenUtil {
                   auth
                       ? const UserCard()
                       : GestureDetector(
-                          onTap: () => context.router
-                              .navigateTo(context, SignInPage.routeName),
+                          onTap: () => context.router.navigateTo(
+                              context, "${SignInPage.routeName}/true"),
                           child: Container(
                             width: 1000.w,
                             height: 50,
@@ -120,6 +122,9 @@ class _SettingsPageState extends State<SettingsPage> with sz.ScreenUtil {
                               context.setLocale(const Locale("en"));
                               initPage();
                               WidgetsBinding.instance.performReassemble();
+                              context.router.navigateTo(
+                                  context, SettingsPage.reset,
+                                  replace: true);
                             }
                           },
                           child: SelectableButton(
@@ -131,6 +136,9 @@ class _SettingsPageState extends State<SettingsPage> with sz.ScreenUtil {
                               context.setLocale(const Locale("ar"));
                               initPage();
                               WidgetsBinding.instance.performReassemble();
+                              context.router.navigateTo(
+                                  context, SettingsPage.reset,
+                                  replace: true);
                             }
                           },
                           child: SelectableButton(

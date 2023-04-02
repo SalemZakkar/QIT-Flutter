@@ -10,6 +10,8 @@ extension Dialogs on ScreenUtil {
         context: context,
         type: QuickAlertType.success,
         text: msg ?? "Success",
+        title: "success".tr(),
+        confirmBtnText: "ok".tr(),
         confirmBtnColor: Colors.green);
   }
 

@@ -24,6 +24,10 @@ dependencies:
   easy_localization: ^3.0.1
   flutter_screenutil: ^5.7.0
   cached_network_image: ^3.2.3
+  sqflite: ^2.2.6
+  path: ^1.8.2
+  hive:
+  hive_flutter:
   salem_package:
     git: https://github.com/SalemZakkar/SalemPackage.git
   json_annotation: ^4.8.0

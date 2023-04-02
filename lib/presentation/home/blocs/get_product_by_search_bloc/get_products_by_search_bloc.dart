@@ -16,8 +16,7 @@ class GetProductsBySearchBloc
   GetProductListSearchUseCase useCase;
 
   GetProductsBySearchBloc(this.useCase) : super(const BaseState()) {
-    on<GetProductsBySearchEvent>((event, emit) {
-    });
+    on<GetProductsBySearchEvent>((event, emit) {});
     on<GetProductsBySeacrh>((event, emit) async {
       emit(state.setProgress());
       Either res = await useCase.call(event.perPage, event.page, event.keyword);
