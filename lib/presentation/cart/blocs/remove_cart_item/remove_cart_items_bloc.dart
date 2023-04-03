@@ -16,8 +16,7 @@ class RemoveCartItemsBloc extends Bloc<RemoveCartItemsEvent, BaseState> {
   RemoveFromCartUseCase removeCartItemUseCase;
 
   RemoveCartItemsBloc(this.removeCartItemUseCase) : super(const BaseState()) {
-    on<RemoveCartItemsEvent>((event, emit) {
-    });
+    on<RemoveCartItemsEvent>((event, emit) {});
     on<RemoveCartItem>((event, emit) async {
       emit(state.setProgress());
       Either res = await removeCartItemUseCase.call(event.id);

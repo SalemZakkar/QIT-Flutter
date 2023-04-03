@@ -48,6 +48,7 @@ class _CartPageState extends State<CartPage> with sz.ScreenUtil {
         BlocListener<AuthBloc, AuthState>(listener: (context, state) {
           if (state is Authenticated) {
             setState(() {
+              bloc.add(const GetCartItemsEvent.getCartItems());
               loggedIn = true;
             });
           } else {
@@ -60,11 +61,11 @@ class _CartPageState extends State<CartPage> with sz.ScreenUtil {
       child: Scaffold(
         appBar: AppBar(
           title: Text("cart".tr()),
+          toolbarHeight: 50.h,
         ),
         body: Container(
           constraints: const BoxConstraints.expand(),
           alignment: Alignment.center,
-          padding: const EdgeInsets.all(20),
           child: loggedIn
               ? BlocConsumer<GetCartItemsBloc, BaseState>(
                   bloc: bloc,
@@ -110,7 +111,25 @@ class _CartPageState extends State<CartPage> with sz.ScreenUtil {
                     }
                     if (state.success) {
                       CartItems cartItems = state.item as CartItems;
+                      if (cartItems.data.isEmpty) {
+                        return Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.remove_shopping_cart_outlined,
+                              size: 30.r,
+                            ),
+                            20.h.spaceHeight(),
+                            Text(
+                              "cart_empty".tr(),
+                              style: TextStyle(
+                                  fontSize: 14.sp, fontWeight: FontWeight.w600),
+                            ),
+                          ],
+                        );
+                      }
                       return ListView.separated(
+                          padding: EdgeInsets.all(20.h),
                           physics: const BouncingScrollPhysics(),
                           itemBuilder: (context, index) {
                             return CartCard(
@@ -125,13 +144,15 @@ class _CartPageState extends State<CartPage> with sz.ScreenUtil {
                     return const SizedBox();
                   },
                 )
-              : const UnAuthWidget(),
+              : Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  child: const UnAuthWidget()),
         ),
         bottomNavigationBar: Visibility(
           visible: success,
           child: Container(
             width: 1000.w,
-            height: 70.h,
+            height: 30.h,
             alignment: Alignment.center,
             child: Text(
               "${"total".tr()}: $price $cur",

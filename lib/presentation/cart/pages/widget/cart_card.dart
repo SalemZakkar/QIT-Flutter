@@ -96,10 +96,15 @@ class _CartCardState extends State<CartCard> with sz.ScreenUtil {
                   ),
                 ),
                 10.h.spaceHeight(),
-                Text("${"count".tr()}: ${widget.cart.count}"),
+                Text(
+                  "${"count".tr()}: ${widget.cart.count}",
+                  style: TextStyle(fontSize: 13.sp),
+                ),
                 5.h.spaceHeight(),
                 Text(
-                    "${"total".tr()}: ${widget.cart.total} ${widget.cart.currency}"),
+                  "${"total".tr()}: ${widget.cart.total} ${widget.cart.currency}",
+                  style: TextStyle(fontSize: 13.sp),
+                ),
               ],
             ),
             IconButton(

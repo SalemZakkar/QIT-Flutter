@@ -23,6 +23,7 @@ mixin _$CartModel {
   Data? get data => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $CartModelCopyWith<CartModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -32,6 +33,7 @@ mixin _$CartModel {
 abstract class $CartModelCopyWith<$Res> {
   factory $CartModelCopyWith(CartModel value, $Res Function(CartModel) then) =
       _$CartModelCopyWithImpl<$Res, CartModel>;
+
   @useResult
   $Res call({Data? data});
 
@@ -45,6 +47,7 @@ class _$CartModelCopyWithImpl<$Res, $Val extends CartModel>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -79,6 +82,7 @@ abstract class _$$_CartModelCopyWith<$Res> implements $CartModelCopyWith<$Res> {
   factory _$$_CartModelCopyWith(
           _$_CartModel value, $Res Function(_$_CartModel) then) =
       __$$_CartModelCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({Data? data});
@@ -159,6 +163,7 @@ abstract class _CartModel implements CartModel {
 
   @override
   Data? get data;
+
   @override
   @JsonKey(ignore: true)
   _$$_CartModelCopyWith<_$_CartModel> get copyWith =>
@@ -172,11 +177,15 @@ Data _$DataFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Data {
   int? get id => throw _privateConstructorUsedError;
+
   Total? get total => throw _privateConstructorUsedError;
+
   int? get items => throw _privateConstructorUsedError;
+
   List<Product>? get products => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $DataCopyWith<Data> get copyWith => throw _privateConstructorUsedError;
 }
@@ -185,6 +194,7 @@ mixin _$Data {
 abstract class $DataCopyWith<$Res> {
   factory $DataCopyWith(Data value, $Res Function(Data) then) =
       _$DataCopyWithImpl<$Res, Data>;
+
   @useResult
   $Res call({int? id, Total? total, int? items, List<Product>? products});
 
@@ -198,6 +208,7 @@ class _$DataCopyWithImpl<$Res, $Val extends Data>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -246,6 +257,7 @@ class _$DataCopyWithImpl<$Res, $Val extends Data>
 abstract class _$$_DataCopyWith<$Res> implements $DataCopyWith<$Res> {
   factory _$$_DataCopyWith(_$_Data value, $Res Function(_$_Data) then) =
       __$$_DataCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({int? id, Total? total, int? items, List<Product>? products});
@@ -305,6 +317,7 @@ class _$_Data implements _Data {
   @override
   final int? items;
   final List<Product>? _products;
+
   @override
   List<Product>? get products {
     final value = _products;
@@ -360,12 +373,16 @@ abstract class _Data implements Data {
 
   @override
   int? get id;
+
   @override
   Total? get total;
+
   @override
   int? get items;
+
   @override
   List<Product>? get products;
+
   @override
   @JsonKey(ignore: true)
   _$$_DataCopyWith<_$_Data> get copyWith => throw _privateConstructorUsedError;
@@ -378,14 +395,19 @@ Product _$ProductFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Product {
   int? get id => throw _privateConstructorUsedError;
+
   @JsonKey(name: "product_id")
   int? get productId => throw _privateConstructorUsedError;
+
   Total? get total => throw _privateConstructorUsedError;
+
   Total? get unitPrice => throw _privateConstructorUsedError;
+
   @JsonKey(name: "total_quantity")
   int? get totalQuantity => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $ProductCopyWith<Product> get copyWith => throw _privateConstructorUsedError;
 }
@@ -394,6 +416,7 @@ mixin _$Product {
 abstract class $ProductCopyWith<$Res> {
   factory $ProductCopyWith(Product value, $Res Function(Product) then) =
       _$ProductCopyWithImpl<$Res, Product>;
+
   @useResult
   $Res call(
       {int? id,
@@ -403,6 +426,7 @@ abstract class $ProductCopyWith<$Res> {
       @JsonKey(name: "total_quantity") int? totalQuantity});
 
   $TotalCopyWith<$Res>? get total;
+
   $TotalCopyWith<$Res>? get unitPrice;
 }
 
@@ -413,6 +437,7 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -479,6 +504,7 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
   factory _$$_ProductCopyWith(
           _$_Product value, $Res Function(_$_Product) then) =
       __$$_ProductCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -490,6 +516,7 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
 
   @override
   $TotalCopyWith<$Res>? get total;
+
   @override
   $TotalCopyWith<$Res>? get unitPrice;
 }
@@ -612,16 +639,21 @@ abstract class _Product implements Product {
 
   @override
   int? get id;
+
   @override
   @JsonKey(name: "product_id")
   int? get productId;
+
   @override
   Total? get total;
+
   @override
   Total? get unitPrice;
+
   @override
   @JsonKey(name: "total_quantity")
   int? get totalQuantity;
+
   @override
   @JsonKey(ignore: true)
   _$$_ProductCopyWith<_$_Product> get copyWith =>
@@ -635,10 +667,13 @@ Total _$TotalFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Total {
   String? get value => throw _privateConstructorUsedError;
+
   String? get currency => throw _privateConstructorUsedError;
+
   String? get formatted => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $TotalCopyWith<Total> get copyWith => throw _privateConstructorUsedError;
 }
@@ -647,6 +682,7 @@ mixin _$Total {
 abstract class $TotalCopyWith<$Res> {
   factory $TotalCopyWith(Total value, $Res Function(Total) then) =
       _$TotalCopyWithImpl<$Res, Total>;
+
   @useResult
   $Res call({String? value, String? currency, String? formatted});
 }
@@ -658,6 +694,7 @@ class _$TotalCopyWithImpl<$Res, $Val extends Total>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -689,6 +726,7 @@ class _$TotalCopyWithImpl<$Res, $Val extends Total>
 abstract class _$$_TotalCopyWith<$Res> implements $TotalCopyWith<$Res> {
   factory _$$_TotalCopyWith(_$_Total value, $Res Function(_$_Total) then) =
       __$$_TotalCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({String? value, String? currency, String? formatted});
@@ -784,10 +822,13 @@ abstract class _Total implements Total {
 
   @override
   String? get value;
+
   @override
   String? get currency;
+
   @override
   String? get formatted;
+
   @override
   @JsonKey(ignore: true)
   _$$_TotalCopyWith<_$_Total> get copyWith =>

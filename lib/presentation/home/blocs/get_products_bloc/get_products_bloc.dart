@@ -16,9 +16,7 @@ class GetProductsBloc
   GetProductListUseCase useCase;
 
   GetProductsBloc(this.useCase) : super(const BaseState()) {
-    on<GetProductsEvent>((event, emit) {
-
-    });
+    on<GetProductsEvent>((event, emit) {});
     on<GetProductsListEvent>((event, emit) async {
       emit(state.setProgress());
       Either res = await useCase.call(event.n, event.p);

@@ -22,6 +22,7 @@ mixin _$AddToCartEvent {
     required TResult Function(ProductEntity entity, int quantity) addToCart,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
@@ -35,12 +36,14 @@ mixin _$AddToCartEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_AddToCart value) addToCart,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
@@ -70,6 +73,7 @@ class _$AddToCartEventCopyWithImpl<$Res, $Val extends AddToCartEvent>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 }
@@ -180,6 +184,7 @@ abstract class _$$_AddToCartCopyWith<$Res> {
   factory _$$_AddToCartCopyWith(
           _$_AddToCart value, $Res Function(_$_AddToCart) then) =
       __$$_AddToCartCopyWithImpl<$Res>;
+
   @useResult
   $Res call({ProductEntity entity, int quantity});
 
@@ -324,7 +329,9 @@ abstract class _AddToCart implements AddToCartEvent {
       required final int quantity}) = _$_AddToCart;
 
   ProductEntity get entity;
+
   int get quantity;
+
   @JsonKey(ignore: true)
   _$$_AddToCartCopyWith<_$_AddToCart> get copyWith =>
       throw _privateConstructorUsedError;

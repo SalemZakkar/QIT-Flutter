@@ -22,6 +22,7 @@ mixin _$RemoveCartItemsEvent {
     required TResult Function(int id) removeCartItem,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
@@ -35,12 +36,14 @@ mixin _$RemoveCartItemsEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(RemoveCartItem value) removeCartItem,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
@@ -71,6 +74,7 @@ class _$RemoveCartItemsEventCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 }
@@ -181,6 +185,7 @@ abstract class _$$RemoveCartItemCopyWith<$Res> {
   factory _$$RemoveCartItemCopyWith(
           _$RemoveCartItem value, $Res Function(_$RemoveCartItem) then) =
       __$$RemoveCartItemCopyWithImpl<$Res>;
+
   @useResult
   $Res call({int id});
 }
@@ -304,6 +309,7 @@ abstract class RemoveCartItem implements RemoveCartItemsEvent {
   const factory RemoveCartItem({required final int id}) = _$RemoveCartItem;
 
   int get id;
+
   @JsonKey(ignore: true)
   _$$RemoveCartItemCopyWith<_$RemoveCartItem> get copyWith =>
       throw _privateConstructorUsedError;

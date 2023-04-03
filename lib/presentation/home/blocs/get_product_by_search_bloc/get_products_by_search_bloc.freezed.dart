@@ -23,6 +23,7 @@ mixin _$GetProductsBySearchEvent {
         getProductsBySearch,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
@@ -38,12 +39,14 @@ mixin _$GetProductsBySearchEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(GetProductsBySeacrh value) getProductsBySearch,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
@@ -74,6 +77,7 @@ class _$GetProductsBySearchEventCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 }
@@ -187,6 +191,7 @@ abstract class _$$GetProductsBySeacrhCopyWith<$Res> {
   factory _$$GetProductsBySeacrhCopyWith(_$GetProductsBySeacrh value,
           $Res Function(_$GetProductsBySeacrh) then) =
       __$$GetProductsBySeacrhCopyWithImpl<$Res>;
+
   @useResult
   $Res call({int perPage, int page, dynamic keyword});
 }
@@ -330,8 +335,11 @@ abstract class GetProductsBySeacrh implements GetProductsBySearchEvent {
       _$GetProductsBySeacrh;
 
   int get perPage;
+
   int get page;
+
   dynamic get keyword;
+
   @JsonKey(ignore: true)
   _$$GetProductsBySeacrhCopyWith<_$GetProductsBySeacrh> get copyWith =>
       throw _privateConstructorUsedError;

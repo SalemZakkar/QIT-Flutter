@@ -36,5 +36,6 @@
   "add_to_cart_success" : "Added To Cart Successfully",
   "unAuth" : "You Haven't signed in yet !",
   "cancel" : "cancel",
-  "warning" : "Warning"
+  "warning" : "Warning",
+  "cart_empty" : "Cart is empty"
 }

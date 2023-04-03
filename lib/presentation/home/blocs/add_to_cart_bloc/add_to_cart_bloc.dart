@@ -15,8 +15,7 @@ class AddToCartBloc extends Bloc<AddToCartEvent, BaseState> {
   AddToCartUseCase addToCartUseCase;
 
   AddToCartBloc(this.addToCartUseCase) : super(const BaseState()) {
-    on<AddToCartEvent>((event, emit) {
-    });
+    on<AddToCartEvent>((event, emit) {});
     on<_AddToCart>((event, emit) async {
       emit(state.setProgress());
       Either res = await addToCartUseCase.call(event.entity, event.quantity);
